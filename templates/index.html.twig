@@ -1,0 +1,700 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div  class="main">
+        <div id="property_slider-2" class="widget widget_property_slider">
+            <div class="property-slider">
+                <div id="remp-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- 2 pics slider -->
+                        <div class="item active">
+                            <figure>
+                                <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2017/07/slide2.jpg" alt="West Broadway Street" class="img-responsive"/>
+                            </figure>
+                        </div>
+                        <div class="item ">
+                            <figure>
+                                <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2017/07/slide1.jpg" alt="North Greenwich Street" class="img-responsive"/>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="filter_rent_sale_widget-2" class="widget widget_filter_rent_sale_widget">
+            <h2 class="widgettitle">	Search	</h2>
+            <div class="main-search">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main-search-form-inner">
+                                <div class="tabs ">
+                                    <ul id="myTab" class="nav nav-tabs nav-justified">
+                                        <li class="sale"><a href="#filter_rent_sale_widget-2-sale" data-toggle="tab">Sale</a></li>
+                                    </ul>
+                                    <div id="myTabContent" class="tab-content">
+                                        <div class="tab-pane fade in rent-tab active" id="filter_rent_sale_widget-2-rent">
+                                            <form method="get" action="http://www.ongoingthemes.com/homelist/properties/">
+                                                <input type="hidden" name="filter-contract" value="SALE">
+                                                <div class="field col-md-3 col-sm-3 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label for="rent_filter_rent_sale_widget-2_location">Location</label>
+                                                        <select class="form-control" name="filter-location" id="rent_filter_rent_sale_widget-2_location">
+                                                            <option value="">All locations</option>
+                                                            <option value="35" >England</option>
+                                                            <option value="50" >&raquo;&nbsp; London</option>
+                                                            <option value="69" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Hounslow</option>
+                                                            <option value="70" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Knightsbridge</option>
+                                                            <option value="37" >France</option>
+                                                            <option value="52" >&raquo;&nbsp; Paris</option>
+                                                            <option value="65" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Batignolles</option>
+                                                            <option value="71" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Le Marais</option>
+                                                            <option value="72" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Montmartre</option>
+                                                            <option value="46" >Italy</option>
+                                                            <option value="56" >&raquo;&nbsp; Rome</option>
+                                                            <option value="64" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Balduina</option>
+                                                            <option value="66" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Casalotti</option>
+                                                            <option value="68" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Garbatella</option>
+                                                            <option value="73" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Municipio V</option>
+                                                            <option value="74" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Municipio XI</option>
+                                                            <option value="75" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Municipio XII</option>
+                                                            <option value="47" >Japan</option>
+                                                            <option value="59" >&raquo;&nbsp; Tokyo</option>
+                                                            <option value="60" >United Arab</option>
+                                                            <option value="67" >&raquo;&nbsp; Dubai</option>
+                                                            <option value="61" >United States</option>
+                                                            <option value="76" >&raquo;&nbsp; New York City</option>
+                                                            <option value="80" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Brooklyn</option>
+                                                            <option value="81" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Manhattan</option>
+                                                            <option value="77" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Queens</option>
+                                                            <option value="78" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; Staten Island</option>
+                                                            <option value="79" >&nbsp;&nbsp;&nbsp;&raquo;&nbsp; The Bronx</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="field col-md-3 col-sm-3 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label for="rent_filter_rent_sale_widget-2_property_type">Property type</label>
+                                                        <select class="form-control" name="filter-property-type" id="rent_filter_rent_sale_widget-2_property_type">
+                                                            <option value="">All property types</option>
+                                                            <option value="20" >Apartment</option>
+                                                            <option value="26" >Building area</option>
+                                                            <option value="31" >Condo</option>
+                                                            <option value="43" >House</option>
+                                                            <option value="62" >Villa</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="field col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="form-group">
+                                                        <label for="rent_filter_rent_sale_widget-2_price_from">Price from</label>
+                                                        <input type="number" min="0" name="filter-price-from"
+                                                               class="form-control" value=""
+                                                               id="rent_filter_rent_sale_widget-2_price_from"
+                                                               placeholder="$ - Price in US Dollar">
+                                                    </div>
+                                                </div>
+                                                <div class="field col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="form-group">
+                                                        <label for="rent_filter_rent_sale_widget-2_price_to">Price to</label>
+                                                        <input type="number" min="0" name="filter-price-to"
+                                                               class="form-control" value=""
+                                                               id="rent_filter_rent_sale_widget-2_price_to"
+                                                               placeholder="$ - Price in US Dollar">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" style="float: right">
+                                                    <div class="form-group">
+                                                        <label>&nbsp;</label>
+                                                        <button class="btn btn-success btn-block">Search</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- content begins -->
+
+        <div id="homelist_locations_widget-3" class="widget widget_homelist_locations_widget">
+            <div id="property-location">
+                <div class="container">
+                    <div class="row">
+                        <div class="browse-location">
+                            <h2 class="widgettitle">Real Estate Locations
+                                <small>Find a house for sale or rent on a location basis.</small>
+                            </h2>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="top-location" style="background-image: url(http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_01.jpg);">
+                                    <img class="location-img" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_01.jpg" alt="England">
+                                    <div class="top-location-inner">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/location/england/london/">London</a>
+                                        </h3>
+                                        <span>2 listings</span>
+                                        <a class="country" href="http://www.ongoingthemes.com/homelist/location/england/">
+                                            <i class="fa fa-map-marker"></i> England
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="top-location" style="background-image: url(http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_03.jpg);">
+                                    <img class="location-img" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_03.jpg" alt="France">
+                                    <div class="top-location-inner">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/location/france/paris/">Paris</a>
+                                        </h3>
+                                        <span>1 listings</span>
+                                        <a class="country" href="http://www.ongoingthemes.com/homelist/location/france/">
+                                            <i class="fa fa-map-marker"></i> France
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="top-location" style="background-image: url(http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_04.jpg);">
+                                    <img class="location-img" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_04.jpg" alt="Italy">
+                                    <div class="top-location-inner">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/location/italy/rome/">Rome</a>
+                                        </h3>
+                                        <span>1 listings</span>
+                                        <a class="country" href="http://www.ongoingthemes.com/homelist/location/italy/">
+                                            <i class="fa fa-map-marker"></i> Italy
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="top-location" style="background-image: url(http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_06.jpg);">
+                                    <img class="location-img" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_06.jpg" alt="Japan">
+                                    <div class="top-location-inner">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/location/japan/tokyo/">Tokyo</a>
+                                        </h3>
+                                        <span>No listings</span>
+                                        <a class="country" href="http://www.ongoingthemes.com/homelist/location/japan/">
+                                            <i class="fa fa-map-marker"></i> Japan
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="top-location" style="background-image: url(http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_05.jpg);">
+                                    <img class="location-img" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_05.jpg" alt="United Arab">
+                                    <div class="top-location-inner">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/location/united-arab/dubai/">Dubai</a>
+                                        </h3>
+                                        <span>No listings</span>
+                                        <a class="country" href="http://www.ongoingthemes.com/homelist/location/united-arab/">
+                                            <i class="fa fa-map-marker"></i> United Arab
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="top-location" style="background-image: url(http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_02.jpg);">
+                                    <img class="location-img" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/location_02.jpg" alt="United States">
+                                    <div class="top-location-inner">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/location/united-states/new-york-city/">New York City</a>
+                                        </h3>
+                                        <span>4 listings</span>
+                                        <a class="country" href="http://www.ongoingthemes.com/homelist/location/united-states/">
+                                            <i class="fa fa-map-marker"></i> United States
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second content block -->
+
+        <div id="properties_widget-4" class="widget widget_properties_widget">
+            <div class="properties_content">
+                <div class="container">
+                    <h2 class="widgettitle">Featured Properties
+                        <small>Find the latest homes for sale, property news &amp; real estate market data</small>
+                    </h2>
+                    <div class="type-box item-per-row-3">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="property-container">
+                                    <div class="property-image ">
+                                        <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img05.jpg" class="property-box-thumbnail wp-post-image" alt="" />
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-box-image-inner "></a>
+                                    </div>
+                                    <div class="property-content">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/">Via di Boccea St.</a>
+                                            <small><i class="flaticon-pin-1"></i> Via di Boccea St, Italy</small>
+                                        </h3>
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                    </div>
+                                    <div class="property-attributes text-center">
+                                        <div class="col-xs-4">
+                                            <h4>
+                                                <i class="fa fa-money"></i>
+                                                <p title="Price">1000$</p>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="property-buttons">
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="property-container">
+                                    <div class="property-image ">
+                                        <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img07.jpg" class="property-box-thumbnail wp-post-image" alt="" />
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-box-image-inner "></a>
+                                    </div>
+                                    <div class="property-content">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/">Rue de Rivoli Street</a>
+                                            <small><i class="flaticon-pin-1"></i> 91 Rue de Rivoli, Paris</small>
+                                        </h3>
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                    </div>
+                                    <div class="property-attributes text-center">
+                                        <div class="col-xs-4">
+                                            <h4>
+                                                <i class="fa fa-money"></i>
+                                                <p title="Price">1000$</p>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="property-buttons">
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="property-container">
+                                    <div class="property-image ">
+                                        <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img09.jpg" class="property-box-thumbnail wp-post-image" alt="" />
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-box-image-inner "></a>
+                                    </div>
+                                    <div class="property-content">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/">East Thompson Street</a>
+                                            <small><i class="flaticon-pin-1"></i> New York, NY 10013</small>
+                                        </h3>
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                    </div>
+                                    <div class="property-attributes text-center">
+                                        <div class="col-xs-4">
+                                            <h4>
+                                                <i class="fa fa-money"></i>
+                                                <p title="Price">1000$</p>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="property-buttons">
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third block content -->
+
+            <div id="properties_widget-3" class="widget widget_properties_widget">
+                <div class="properties_content">
+                    <div class="container">
+                        <h2 class="widgettitle">Latest Real Estate
+                            <small>Find the latest homes for sale, property news &amp; real estate market data</small>
+                        </h2>
+                        <div class="type-box item-per-row-4">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="property-container">
+                                        <div class="property-image ">
+                                            <div class="slick-slider slider">
+                                                <div>
+                                                    <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img05.jpg" class="property-box-thumbnail wp-post-image" alt="" />
+                                                </div>
+                                                <div>
+                                                    <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img08.jpg" class="property-box-thumbnail wp-post-image" alt="" />
+                                                </div>
+                                            </div>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-box-image-inner "></a>
+                                        </div>
+                                        <div class="property-content">
+                                            <h3>
+                                                <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/">Via di Boccea St.</a>
+                                                <small><i class="flaticon-pin-1"></i> Via di Boccea St, Italy</small>
+                                            </h3>
+                                            <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                        </div>
+                                        <div class="property-attributes text-center">
+                                            <div class="col-xs-4">
+                                                <h4>
+                                                    <i class="fa fa-money"></i>
+                                                    <p title="Price">1000$</p>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="property-buttons">
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="property-container">
+                                        <div class="property-image ">
+                                            <div class="slick-slider slider">
+                                                <div>
+                                                    <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img12.jpg" alt="The Knightsbridge Ap.">
+                                                </div>
+                                                <div>
+                                                    <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img15.jpg" alt="The Knightsbridge Ap.">
+                                                </div>
+                                            </div>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/the-knightsbridge-ap/" class="property-box-image-inner "></a>
+                                        </div>
+                                        <div class="property-content">
+                                            <h3>
+                                                <a href="http://www.ongoingthemes.com/homelist/properties/the-knightsbridge-ap/">The Knightsbridge Ap.</a>
+                                                <small><i class="flaticon-pin-1"></i> Knightsbridge, London</small>
+                                            </h3>
+                                            <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                        </div>
+                                        <div class="property-attributes text-center">
+                                            <div class="col-xs-4">
+                                                <h4>
+                                                    <i class="fa fa-money"></i>
+                                                    <p title="Price">1000$</p>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="property-buttons">
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="property-container">
+                                        <div class="property-image ">
+                                            <div class="slick-slider slider">
+                                                <div>
+                                                    <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img07.jpg" alt="The Knightsbridge Ap.">
+                                                </div>
+                                                <div>
+                                                    <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img09.jpg" alt="The Knightsbridge Ap.">
+                                                </div>
+                                            </div>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/the-knightsbridge-ap/" class="property-box-image-inner "></a>
+                                        </div>
+                                        <div class="property-content">
+                                            <h3>
+                                                <a href="http://www.ongoingthemes.com/homelist/properties/the-knightsbridge-ap/">Rue de Rivoli Street</a>
+                                                <small><i class="flaticon-pin-1"></i>Rue de Rivoli Street, Paris</small>
+                                            </h3>
+                                            <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                        </div>
+                                        <div class="property-attributes text-center">
+                                            <div class="col-xs-4">
+                                                <h4>
+                                                    <i class="fa fa-money"></i>
+                                                    <p title="Price">1000$</p>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="property-buttons">
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="property-container">
+                                        <div class="property-image ">
+                                            <div class="slick-slider slider">
+                                                <div>
+                                                    <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img03.jpg" alt="The Knightsbridge Ap.">
+                                                </div>
+                                                <div>
+                                                    <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img04.jpg" alt="The Knightsbridge Ap.">
+                                                </div>
+                                            </div>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/the-knightsbridge-ap/" class="property-box-image-inner "></a>
+                                        </div>
+                                        <div class="property-content">
+                                            <h3>
+                                                <a href="http://www.ongoingthemes.com/homelist/properties/the-knightsbridge-ap/">West Broadway Street</a>
+                                                <small><i class="flaticon-pin-1"></i> 42 W Broadway, New York</small>
+                                            </h3>
+                                            <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                        </div>
+                                        <div class="property-attributes text-center">
+                                            <div class="col-xs-4">
+                                                <h4>
+                                                    <i class="fa fa-money"></i>
+                                                    <p title="Price">1000$</p>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="property-buttons">
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fourth content block -->
+
+        <div id="properties_widget-4" class="widget widget_properties_widget">
+            <div class="properties_content">
+                <div class="container">
+                    <h2 class="widgettitle">Featured Properties
+                        <small>Find the latest homes for sale, property news &amp; real estate market data</small>
+                    </h2>
+                    <div class="type-box item-per-row-3">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="property-container">
+                                    <div class="property-image ">
+                                        <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img05.jpg" class="property-box-thumbnail wp-post-image" alt="" />
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-box-image-inner "></a>
+                                    </div>
+                                    <div class="property-content">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/">Via di Boccea St.</a>
+                                            <small><i class="flaticon-pin-1"></i> Via di Boccea St, Italy</small>
+                                        </h3>
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                    </div>
+                                    <div class="property-attributes text-center">
+                                        <div class="col-xs-4">
+                                            <h4>
+                                                <i class="fa fa-money"></i>
+                                                <p title="Price">1000$</p>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="property-buttons">
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="property-container">
+                                    <div class="property-image ">
+                                        <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img07.jpg" class="property-box-thumbnail wp-post-image" alt="" />
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-box-image-inner "></a>
+                                    </div>
+                                    <div class="property-content">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/">Rue de Rivoli Street</a>
+                                            <small><i class="flaticon-pin-1"></i> 91 Rue de Rivoli, Paris</small>
+                                        </h3>
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                    </div>
+                                    <div class="property-attributes text-center">
+                                        <div class="col-xs-4">
+                                            <h4>
+                                                <i class="fa fa-money"></i>
+                                                <p title="Price">1000$</p>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="property-buttons">
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="property-container">
+                                    <div class="property-image ">
+                                        <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img09.jpg" class="property-box-thumbnail wp-post-image" alt="" />
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-box-image-inner "></a>
+                                    </div>
+                                    <div class="property-content">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/">East Thompson Street</a>
+                                            <small><i class="flaticon-pin-1"></i> New York, NY 10013</small>
+                                        </h3>
+                                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                    </div>
+                                    <div class="property-attributes text-center">
+                                        <div class="col-xs-4">
+                                            <h4>
+                                                <i class="fa fa-money"></i>
+                                                <p title="Price">1000$</p>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="property-buttons">
+                                        <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/" class="property-btn">Browse</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer reviews -->
+
+    <div id="homelist_testimonials_widget-2" class="widget widget_homelist_testimonials_widget">
+        <div id="testimonials" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <h2 class="widgettitle">What Our Customers Say
+                        <small>The following quotes are typical for the customer appreciation Homelist receives</small>
+                    </h2>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="testimonial-box">
+                            <div class="testimonial-image"><img width="300" height="300" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/person-4.jpg" class="attachment-full size-full wp-post-image" alt="" /></div>
+                            <div class="testimonial-title">Exclusive Service</div>
+                            <div class="testimonial-details">If you want your home sold with no hassles, you need to contact Karen and Paul. He sold my house...</div>
+                            <div class="testimonial-info"><span class="name">Laura Lancaster</span> - Designer @ OngoingThemes  &nbsp;&nbsp;<ul class="rating-stars"><li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li></ul></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="testimonial-box">
+                            <div class="testimonial-image"><img width="300" height="300" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/person-1.jpg" class="attachment-full size-full wp-post-image" alt="" /></div>
+                            <div class="testimonial-title">Very Good!</div>
+                            <div class="testimonial-details">My experience with Michael was simply outstanding. My wife and I were looking to downsize to a smaller home in...</div>
+                            <div class="testimonial-info"><span class="name">Brad Urbach</span> - Developer @ OngoingThemes  &nbsp;&nbsp;<ul class="rating-stars"><li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li></ul></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="testimonial-box">
+                            <div class="testimonial-image"><img width="300" height="300" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/person-3.jpg" class="attachment-full size-full wp-post-image" alt="" /></div>
+                            <div class="testimonial-title">Great Services!</div>
+                            <div class="testimonial-details">We had the pleasure of dealing with Britney for the sale of our property in NY and couldn&#039;t be happier....</div>
+                            <div class="testimonial-info"><span class="name">Daniel William</span> - Manager @ OngoingThemes  &nbsp;&nbsp;<ul class="rating-stars"><li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li></ul></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff info -->
+
+    <div id="agents_widget-2" class="widget widget_agents_widget">
+        <div class="agents_content">
+            <div class="container">
+                <h2 class="widgettitle">	Our Representatives
+                    <small>Our team is ready to help you reach your real estate goal</small>
+                </h2>
+                <div class="type-box">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="agent-container">
+                                <div class="agent-content-list">
+                                    <div class="agent-image-list">
+                                        <img width="300" height="300" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/person-2.jpg" class="attachment-large size-large wp-post-image" alt="" />
+                                    </div>
+                                    <div class="agent-text">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/agents/andrew-man/">Andrew Man</a>
+                                            <small>Consultant</small>
+                                        </h3>
+                                        <div class="agent-email">
+                                            <a href="mailto:info@example.com">info@example.com</a>
+                                        </div>
+                                        <div class="agent-phone">
+                                            +123-456-789
+                                        </div>
+                                        <div class="agent-web">
+                                            <a href="http://example.com">http://example.com</a>
+                                        </div>
+                                        <div class="agent-social-networks">
+                                            <a href="http://www.example.com" class="agent-social-network facebook"></a>
+                                            <a href="http://www.example.com" class="agent-social-network google_plus"></a>
+                                            <a href="http://www.example.com" class="agent-social-network twitter"></a>
+                                            <a href="http://www.example.com" class="agent-social-network linkedin"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="agent-container">
+                                <div class="agent-content-list">
+                                    <div class="agent-image-list">
+                                        <img width="300" height="300" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/person-3.jpg" class="attachment-large size-large wp-post-image" alt="" />
+                                    </div>
+                                    <div class="agent-text">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/agents/peter-ruck/">Peter Ruck</a>
+                                            <small>Manager</small>
+                                        </h3>
+                                        <div class="agent-email">
+                                            <a href="mailto:info@example.com">info@example.com</a>
+                                        </div>
+                                        <div class="agent-phone">
+                                            +123-456-789
+                                        </div>
+                                        <div class="agent-web">
+                                            <a href="http://example.com">http://example.com</a>
+                                        </div>
+                                        <div class="agent-social-networks">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="agent-container">
+                                <div class="agent-content-list">
+                                    <div class="agent-image-list">
+                                        <img width="300" height="300" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/person-4.jpg" class="attachment-large size-large wp-post-image" alt="" />
+                                    </div>
+                                    <div class="agent-text">
+                                        <h3>
+                                            <a href="http://www.ongoingthemes.com/homelist/agents/nancy-collins/">Nancy Collins</a>
+                                            <small>Director</small>
+                                        </h3>
+                                        <div class="agent-email">
+                                            <a href="mailto:info@example.com">info@example.com</a>
+                                        </div>
+                                        <div class="agent-phone">
+                                            +123-456-789
+                                        </div>
+                                        <div class="agent-web">
+                                            <a href="http://example.com">http://example.com</a>
+                                        </div>
+                                        <div class="agent-social-networks">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
