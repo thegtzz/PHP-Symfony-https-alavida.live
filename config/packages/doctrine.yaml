@@ -12,12 +12,14 @@ doctrine:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
 
-        url: '%env(resolve:DATABASE_URL)%'
+        url: 'mysql://e_com_user:6095096yangtzz@127.0.0.1:3306/e_com_dev'
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
         mappings:
+            SonataUserBundle: ~
+            FOSUserBundle: ~
             App:
                 is_bundle: false
                 type: annotation
