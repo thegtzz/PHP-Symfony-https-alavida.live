@@ -13,21 +13,27 @@ final class PostAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('title', TextType::class)
-            ->add('body', TextType::class);
+            ->add('body', TextType::class)
+            ->add('category', TextType::class);
+
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
             ->add('title')
-            ->add('body');
+            ->add('body')
+            ->add('category');
+
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
             ->addIdentifier('title')
-            ->addIdentifier('body');
+            ->addIdentifier('body')
+            ->addIdentifier('category');
+
 
     }
 }
