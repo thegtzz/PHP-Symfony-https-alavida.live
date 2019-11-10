@@ -31,8 +31,21 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: Category }
 
+    App\Admin\AvatarImageAdmin:
+        arguments: [~, App\Entity\ImageAvatar, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: ImageAvatar }
+
+    App\Admin\PostImagesAdmin:
+        arguments: [~, App\Entity\PostImages, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: PostImages }
+
     App\Repository\CategoryRepository:
     App\Repository\PostRepository:
+    App\Repository\AvatarImageRepository:
+    App\Repository\PostImagesRepository:
+
 
     mailer:
         alias: fos_user.mailer.noop
