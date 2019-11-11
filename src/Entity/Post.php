@@ -91,10 +91,87 @@ class Post
 
     /**
      * @var string
-     *
      * @ORM\Column(name="propertyDescription", type="text")
      */
     private $propertyDescription;
+
+    /**
+     * @var string
+     * @ORM\Column(name="youtubeLink", type="text")
+     */
+    private $youtubeLink;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDistance1", type="text")
+     */
+    private $publicFacilitiesDistance1;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDescription1", type="text")
+     */
+    private $publicFacilitiesDescription1;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDistance2", type="text")
+     */
+    private $publicFacilitiesDistance2;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDescription2", type="text")
+     */
+    private $publicFacilitiesDescription2;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDistance3", type="text")
+     */
+    private $publicFacilitiesDistance3;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDescription3", type="text")
+     */
+    private $publicFacilitiesDescription3;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDistance4", type="text")
+     */
+    private $publicFacilitiesDistance4;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDescription4", type="text")
+     */
+    private $publicFacilitiesDescription4;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDistance5", type="text")
+     */
+    private $publicFacilitiesDistance5;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDescription5", type="text")
+     */
+    private $publicFacilitiesDescription5;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDistance6", type="text")
+     */
+    private $publicFacilitiesDistance6;
+
+    /**
+     * @var string
+     * @ORM\Column(name="publicFacilitiesDescription6", type="text")
+     */
+    private $publicFacilitiesDescription6;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\ImageAvatar", cascade={"persist"})
@@ -297,6 +374,162 @@ class Post
     public function setPropertyDescription(?string $propertyDescription): self
     {
         $this->propertyDescription = $propertyDescription;
+
+        return $this;
+    }
+
+    public function getYoutubeLink(): ?string
+    {
+        return $this->youtubeLink;
+    }
+
+    public function setYoutubeLink(?string $youtubeLink): self
+    {
+        $this->youtubeLink = $youtubeLink;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDistance1(): ?string
+    {
+        return $this->publicFacilitiesDistance1;
+    }
+
+    public function setPublicFacilitiesDistance1(?string $publicFacilitiesDistance1): self
+    {
+        $this->publicFacilitiesDistance1 = $publicFacilitiesDistance1;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDescription1(): ?string
+    {
+        return $this->publicFacilitiesDescription1;
+    }
+
+    public function setPublicFacilitiesDescription1(?string $publicFacilitiesDescription1): self
+    {
+        $this->publicFacilitiesDescription1 = $publicFacilitiesDescription1;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDistance2(): ?string
+    {
+        return $this->publicFacilitiesDistance2;
+    }
+
+    public function setPublicFacilitiesDistance2(?string $publicFacilitiesDistance2): self
+    {
+        $this->publicFacilitiesDistance2 = $publicFacilitiesDistance2;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDescription2(): ?string
+    {
+        return $this->publicFacilitiesDescription2;
+    }
+
+    public function setPublicFacilitiesDescription2(?string $publicFacilitiesDescription2): self
+    {
+        $this->publicFacilitiesDescription2 = $publicFacilitiesDescription2;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDistance3(): ?string
+    {
+        return $this->publicFacilitiesDistance3;
+    }
+
+    public function setPublicFacilitiesDistance3(?string $publicFacilitiesDistance3): self
+    {
+        $this->publicFacilitiesDistance3 = $publicFacilitiesDistance3;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDescription3(): ?string
+    {
+        return $this->publicFacilitiesDescription3;
+    }
+
+    public function setPublicFacilitiesDescription3(?string $publicFacilitiesDescription3): self
+    {
+        $this->publicFacilitiesDescription3 = $publicFacilitiesDescription3;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDistance4(): ?string
+    {
+        return $this->publicFacilitiesDistance4;
+    }
+
+    public function setPublicFacilitiesDistance4(?string $publicFacilitiesDistance4): self
+    {
+        $this->publicFacilitiesDistance4 = $publicFacilitiesDistance4;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDescription4(): ?string
+    {
+        return $this->publicFacilitiesDescription4;
+    }
+
+    public function setPublicFacilitiesDescription4(?string $publicFacilitiesDescription4): self
+    {
+        $this->publicFacilitiesDescription4 = $publicFacilitiesDescription4;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDistance5(): ?string
+    {
+        return $this->publicFacilitiesDistance5;
+    }
+
+    public function setPublicFacilitiesDistance5(?string $publicFacilitiesDistance5): self
+    {
+        $this->publicFacilitiesDistance5 = $publicFacilitiesDistance5;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDescription5(): ?string
+    {
+        return $this->publicFacilitiesDescription5;
+    }
+
+    public function setPublicFacilitiesDescription5(?string $publicFacilitiesDescription5): self
+    {
+        $this->publicFacilitiesDescription5 = $publicFacilitiesDescription5;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDistance6(): ?string
+    {
+        return $this->publicFacilitiesDistance6;
+    }
+
+    public function setPublicFacilitiesDistance6(?string $publicFacilitiesDistance6): self
+    {
+        $this->publicFacilitiesDistance6 = $publicFacilitiesDistance6;
+
+        return $this;
+    }
+
+    public function getPublicFacilitiesDescription6(): ?string
+    {
+        return $this->publicFacilitiesDescription6;
+    }
+
+    public function setPublicFacilitiesDescription6(?string $publicFacilitiesDescription6): self
+    {
+        $this->publicFacilitiesDescription6 = $publicFacilitiesDescription6;
 
         return $this;
     }

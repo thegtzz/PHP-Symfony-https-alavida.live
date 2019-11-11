@@ -49,7 +49,20 @@ final class PostAdmin extends AbstractAdmin
                 'choice_label' => 'name',
                 'choice_value' => 'id',
             ])
-            ->add('propertyDescription', TextType::class);
+            ->add('propertyDescription', TextType::class)
+            ->add('youtubeLink', TextType::class)
+            ->add('publicFacilitiesDistance1', TextType::class)
+            ->add('publicFacilitiesDescription1', TextType::class)
+            ->add('publicFacilitiesDistance2', TextType::class)
+            ->add('publicFacilitiesDescription2', TextType::class)
+            ->add('publicFacilitiesDistance3', TextType::class)
+            ->add('publicFacilitiesDescription3', TextType::class)
+            ->add('publicFacilitiesDistance4', TextType::class)
+            ->add('publicFacilitiesDescription4', TextType::class)
+            ->add('publicFacilitiesDistance5', TextType::class)
+            ->add('publicFacilitiesDescription5', TextType::class)
+            ->add('publicFacilitiesDistance6', TextType::class)
+            ->add('publicFacilitiesDescription6', TextType::class);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -67,8 +80,20 @@ final class PostAdmin extends AbstractAdmin
             ->add('propertyName')
             ->add('contactPerson')
             ->add('category')
-            ->add('propertyDescription');
-
+            ->add('propertyDescription')
+            ->add('youtubeLink')
+            ->add('publicFacilitiesDistance1')
+            ->add('publicFacilitiesDescription1')
+            ->add('publicFacilitiesDistance2')
+            ->add('publicFacilitiesDescription2')
+            ->add('publicFacilitiesDistance3')
+            ->add('publicFacilitiesDescription3')
+            ->add('publicFacilitiesDistance4')
+            ->add('publicFacilitiesDescription4')
+            ->add('publicFacilitiesDistance5')
+            ->add('publicFacilitiesDescription5')
+            ->add('publicFacilitiesDistance6')
+            ->add('publicFacilitiesDescription6');
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -86,8 +111,20 @@ final class PostAdmin extends AbstractAdmin
             ->addIdentifier('propertyName')
             ->addIdentifier('contactPerson')
             ->addIdentifier('category')
-            ->addIdentifier('propertyDescription');
-
+            ->addIdentifier('propertyDescription')
+            ->addIdentifier('youtubeLink')
+            ->addIdentifier('publicFacilitiesDistance1')
+            ->addIdentifier('publicFacilitiesDescription1')
+            ->addIdentifier('publicFacilitiesDistance2')
+            ->addIdentifier('publicFacilitiesDescription2')
+            ->addIdentifier('publicFacilitiesDistance3')
+            ->addIdentifier('publicFacilitiesDescription3')
+            ->addIdentifier('publicFacilitiesDistance4')
+            ->addIdentifier('publicFacilitiesDescription4')
+            ->addIdentifier('publicFacilitiesDistance5')
+            ->addIdentifier('publicFacilitiesDescription5')
+            ->addIdentifier('publicFacilitiesDistance6')
+            ->addIdentifier('publicFacilitiesDescription6');
     }
 
     public function prePersist($page)
