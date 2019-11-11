@@ -29,7 +29,7 @@
                                     </ul>
                                     <div id="myTabContent" class="tab-content">
                                         <div class="tab-pane fade in rent-tab active" id="filter_rent_sale_widget-2-rent">
-                                            <form method="get" action="http://www.ongoingthemes.com/homelist/properties/">
+                                            <form method="POST" action="{{ path('get_search_result') }}">
                                                 <input type="hidden" name="filter-contract" value="SALE">
                                                 <div class="field col-md-3 col-sm-3 col-xs-12">
                                                     <div class="form-group">
@@ -49,12 +49,10 @@
                                                     <div class="form-group">
                                                         <label for="rent_filter_rent_sale_widget-2_property_type">Тип</label>
                                                         <select class="form-control" name="filter-property-type" id="rent_filter_rent_sale_widget-2_property_type">
-                                                            <option value="">All property types</option>
-                                                            <option value="20" >Острова</option>
-                                                            <option value="26" >Грунты</option>
-                                                            <option value="31" >Дома</option>
-                                                            <option value="43" >Апартаменты</option>
-                                                            <option value="62" >Инвестиции</option>
+                                                            <option value="all">All property types</option>
+                                                            {% for category in categories %}
+                                                                <option value="category.id">{{ category.name }}</option>
+                                                            {% endfor %}
                                                         </select>
                                                     </div>
                                                 </div>

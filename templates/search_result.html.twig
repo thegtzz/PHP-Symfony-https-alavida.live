@@ -5,7 +5,7 @@
 
 <div class="page-wrapper">
 
-    <div class="header">
+    <div class="header" style="padding-top: 35px">
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
@@ -23,7 +23,7 @@
                     <div id="navbar-top-2" class="menu-primary-container">
                         <ul id="primary-menu" class="nav navbar-nav navbar-right">
                             <li id="menu-item-800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-800">
-                                <a title="Home" href="/">Home </a>
+                                <a title="Home" href="{{ path('get_index') }}">Home </a>
                             </li>
                             <li id="menu-item-800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-800">
                                 <a title="Contact" href=".footer">Contact</a>
@@ -46,7 +46,7 @@
                     </div>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="http://www.ongoingthemes.com/homelist">Home</a>
+                            <a href="{{ path('get_index') }}">Home</a>
                         </li>
                         <li>France</li>                  <!-- NEEDED TO BE A VARIABLE -->
                     </ol>
@@ -56,7 +56,7 @@
     </div>
 
     <!-- MAIN CONTENT -->
-
+{% for post in posts %}
 	<div  id="content"  class="main">
         <div class="container ">
             <section id="primary" class="content-area">
@@ -66,26 +66,26 @@
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="property-container">
                                     <div class="property-image ">
-                                        <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img07.jpg" class="property-box-thumbnail wp-post-image" alt="" />
-                                        <a href="http://www.ongoingthemes.com/homelist/properties/rue-de-rivoli/" class="property-box-image-inner "></a>
+                                        <img width="640" height="425" src="{{ post.imageAvatar }}" class="property-box-thumbnail wp-post-image" alt="" />
+                                        <a href="{{ path('get_post_details') }}" class="property-box-image-inner "></a>
                                     </div>
                                     <div class="property-content">
                                             <h3>
-                                                <a href="http://www.ongoingthemes.com/homelist/properties/via-di-boccea-st/">Via di Boccea St.</a>
-                                                <small><i class="flaticon-pin-1"></i> Via di Boccea St, Italy</small>
+                                                <a href="{{ path('get_post_details') }}">{{ post.title }}</a>
+                                                <small><i class="fa fa-map-marker"></i>{{ post.location }}</small>
                                             </h3>
-                                            <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius...</p>
+                                            <p>{{ post.propertyDescription }}</p>
                                         </div>
                                         <div class="property-attributes text-center">
                                             <div class="col-xs-4">
                                                 <h4>
                                                     <i class="fa fa-money"></i>
-                                                    <p title="Price">1000$</p>
+                                                    <p title="Price">{{ post.price }}</p>
                                                 </h4>
                                             </div>
                                         </div>
                                     <div class="property-buttons">
-                                        <a href="http://www.ongoingthemes.com/homelist/properties/rue-de-rivoli/" class="property-btn">Browse</a>
+                                        <a href="{{ path('get_post_details') }}" class="property-btn">Browse</a>
                                     </div>
                                 </div>
                             </div>
@@ -95,6 +95,7 @@
             </section>
         </div>
 	</div>
+{% endfor %}
 </div>
 </body>
 {% endblock %}
