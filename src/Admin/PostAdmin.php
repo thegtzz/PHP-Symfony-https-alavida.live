@@ -1,6 +1,7 @@
 <?php
 namespace App\Admin;
 
+use App\Entity\StaffAvatar;
 use App\Entity\PostImages;
 use App\Entity\ImageAvatar;
 use App\Entity\Category;
@@ -62,7 +63,14 @@ final class PostAdmin extends AbstractAdmin
             ->add('publicFacilitiesDistance5', TextType::class)
             ->add('publicFacilitiesDescription5', TextType::class)
             ->add('publicFacilitiesDistance6', TextType::class)
-            ->add('publicFacilitiesDescription6', TextType::class);
+            ->add('publicFacilitiesDescription6', TextType::class)
+            ->add('staffAvatar', AdminType::class, [
+                'delete' => false,
+            ])
+            ->add('staffName', TextType::class)
+            ->add('staffEmail', TextType::class)
+            ->add('staffPhone', TextType::class)
+            ->add('staffDescription', TextType::class);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -93,7 +101,12 @@ final class PostAdmin extends AbstractAdmin
             ->add('publicFacilitiesDistance5')
             ->add('publicFacilitiesDescription5')
             ->add('publicFacilitiesDistance6')
-            ->add('publicFacilitiesDescription6');
+            ->add('publicFacilitiesDescription6')
+            ->add('staffAvatar')
+            ->add('staffName')
+            ->add('staffEmail')
+            ->add('staffPhone')
+            ->add('staffDescription');
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -124,7 +137,12 @@ final class PostAdmin extends AbstractAdmin
             ->addIdentifier('publicFacilitiesDistance5')
             ->addIdentifier('publicFacilitiesDescription5')
             ->addIdentifier('publicFacilitiesDistance6')
-            ->addIdentifier('publicFacilitiesDescription6');
+            ->addIdentifier('publicFacilitiesDescription6')
+            ->addIdentifier('staffAvatar')
+            ->addIdentifier('staffName')
+            ->addIdentifier('staffEmail')
+            ->addIdentifier('staffPhone')
+            ->addIdentifier('staffDescription');
     }
 
     public function prePersist($page)
@@ -144,7 +162,8 @@ final class PostAdmin extends AbstractAdmin
             // detect embedded Admins that manage Images
             if ($fieldDescription->getType() === 'sonata_type_admin' &&
                 ($associationMapping = $fieldDescription->getAssociationMapping()) &&
-                $associationMapping['targetEntity'] === 'App\Entity\ImageAvatar'
+                ($associationMapping['targetEntity'] === 'App\Entity\ImageAvatar' ||
+                $associationMapping['targetEntity'] === 'App\Entity\StaffAvatar')
             ) {
                 $getter = 'get'.$fieldName;
                 $setter = 'set'.$fieldName;

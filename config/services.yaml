@@ -41,10 +41,17 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: PostImages }
 
+    App\Admin\StaffAvatarAdmin:
+        arguments: [~, App\Entity\StaffAvatar, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: StaffAvatar }
+
     App\Repository\CategoryRepository:
     App\Repository\PostRepository:
     App\Repository\AvatarImageRepository:
     App\Repository\PostImagesRepository:
+    App\Repository\StaffAvatarRepository:
+
 
 
     mailer:

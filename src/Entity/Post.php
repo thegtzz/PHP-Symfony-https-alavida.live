@@ -180,6 +180,36 @@ class Post
     private $imageAvatar;
 
     /**
+     * @ORM\OneToOne(targetEntity="App\Entity\StaffAvatar", cascade={"persist"})
+     * @ORM\JoinColumn(name="staff_avatar_id", referencedColumnName="id")
+     */
+    private $staffAvatar;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffName", type="text")
+     */
+    private $staffName;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffEmail", type="text")
+     */
+    private $staffEmail;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffPhone", type="text")
+     */
+    private $staffPhone;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffDescription", type="text")
+     */
+    private $staffDescription;
+
+    /**
      * @return mixed
      */
     public function getImageAvatar()
@@ -530,6 +560,71 @@ class Post
     public function setPublicFacilitiesDescription6(?string $publicFacilitiesDescription6): self
     {
         $this->publicFacilitiesDescription6 = $publicFacilitiesDescription6;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStaffAvatar()
+    {
+        return $this->staffAvatar;
+    }
+
+    /**
+     * @param mixed $staffAvatar
+     */
+    public function setStaffAvatar($staffAvatar)
+    {
+        $this->staffAvatar = $staffAvatar;
+        return $this;
+    }
+
+    public function getStaffName(): ?string
+    {
+        return $this->staffName;
+    }
+
+    public function setStaffName(?string $staffName): self
+    {
+        $this->staffName = $staffName;
+
+        return $this;
+    }
+
+    public function getStaffEmail(): ?string
+    {
+        return $this->staffEmail;
+    }
+
+    public function setStaffEmail(?string $staffEmail): self
+    {
+        $this->staffEmail = $staffEmail;
+
+        return $this;
+    }
+
+    public function getStaffPhone(): ?string
+    {
+        return $this->staffPhone;
+    }
+
+    public function setStaffPhone(?string $staffPhone): self
+    {
+        $this->staffPhone = $staffPhone;
+
+        return $this;
+    }
+
+    public function getStaffDescription(): ?string
+    {
+        return $this->staffDescription;
+    }
+
+    public function setStaffDescription(?string $staffDescription): self
+    {
+        $this->staffDescription = $staffDescription;
 
         return $this;
     }
