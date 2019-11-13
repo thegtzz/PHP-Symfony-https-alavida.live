@@ -46,11 +46,17 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: StaffAvatar }
 
+    App\Admin\ContactInformationAdmin:
+        arguments: [~, App\Entity\ContactInformation, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: ContactInformation }
+
     App\Repository\CategoryRepository:
     App\Repository\PostRepository:
     App\Repository\AvatarImageRepository:
     App\Repository\PostImagesRepository:
     App\Repository\StaffAvatarRepository:
+    App\Repository\ContactInformationRepository:
 
 
 

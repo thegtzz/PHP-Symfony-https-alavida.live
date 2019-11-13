@@ -1,13 +1,10 @@
 <?php
 namespace App\Admin;
 
-use App\Entity\StaffAvatar;
-use App\Entity\PostImages;
 use App\Entity\ImageAvatar;
 use App\Entity\Category;
 use App\Form\PostImageType;
 use App\Repository\CategoryRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -34,13 +31,13 @@ final class PostAdmin extends AbstractAdmin
                 'required'			=> false,
             ])
             ->add('location', TextType::class)
-            ->add('status', TextType::class)
-            ->add('propertyType', TextType::class)
-            ->add('contract', TextType::class)
-            ->add('price', TextType::class)
-            ->add('square', TextType::class)
-            ->add('propertyName', TextType::class)
-            ->add('contactPerson', TextType::class)
+            ->add('status', TextType::class, ['required' => false])
+            ->add('propertyType', TextType::class, ['required' => false])
+            ->add('contract', TextType::class, ['required' => false])
+            ->add('price', TextType::class, ['required' => false])
+            ->add('square', TextType::class, ['required' => false])
+            ->add('propertyName', TextType::class, ['required' => false])
+            ->add('contactPerson', TextType::class, ['required' => false])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'query_builder' => function(CategoryRepository $er) {
@@ -50,27 +47,28 @@ final class PostAdmin extends AbstractAdmin
                 'choice_label' => 'name',
                 'choice_value' => 'id',
             ])
-            ->add('propertyDescription', TextType::class)
-            ->add('youtubeLink', TextType::class)
-            ->add('publicFacilitiesDistance1', TextType::class)
-            ->add('publicFacilitiesDescription1', TextType::class)
-            ->add('publicFacilitiesDistance2', TextType::class)
-            ->add('publicFacilitiesDescription2', TextType::class)
-            ->add('publicFacilitiesDistance3', TextType::class)
-            ->add('publicFacilitiesDescription3', TextType::class)
-            ->add('publicFacilitiesDistance4', TextType::class)
-            ->add('publicFacilitiesDescription4', TextType::class)
-            ->add('publicFacilitiesDistance5', TextType::class)
-            ->add('publicFacilitiesDescription5', TextType::class)
-            ->add('publicFacilitiesDistance6', TextType::class)
-            ->add('publicFacilitiesDescription6', TextType::class)
+            ->add('propertyDescription', TextType::class, ['required' => false])
+            ->add('youtubeLink', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDistance1', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDescription1', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDistance2', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDescription2', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDistance3', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDescription3', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDistance4', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDescription4', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDistance5', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDescription5', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDistance6', TextType::class, ['required' => false])
+            ->add('publicFacilitiesDescription6', TextType::class, ['required' => false])
             ->add('staffAvatar', AdminType::class, [
                 'delete' => false,
+                'required' => false,
             ])
-            ->add('staffName', TextType::class)
-            ->add('staffEmail', TextType::class)
-            ->add('staffPhone', TextType::class)
-            ->add('staffDescription', TextType::class);
+            ->add('staffName', TextType::class, ['required' => false])
+            ->add('staffEmail', TextType::class, ['required' => false])
+            ->add('staffPhone', TextType::class, ['required' => false])
+            ->add('staffDescription', TextType::class, ['required' => false]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
