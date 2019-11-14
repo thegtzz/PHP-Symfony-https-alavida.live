@@ -2,3 +2,6 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        contact_info: '@App\Service\ContactInfoService'
+        search_info:  '@App\Service\SearchService'

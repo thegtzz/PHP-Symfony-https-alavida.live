@@ -20,6 +20,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    forms:
+        namespace: App\Form\
+        resource: '../src/Form'
+
 
     App\Admin\PostAdmin:
         arguments: [~, App\Entity\Post, ~]
@@ -58,7 +62,8 @@ services:
     App\Repository\StaffAvatarRepository:
     App\Repository\ContactInformationRepository:
 
-
+    App\Service\ContactInfoService:
+    App\Service\SearchService:
 
     mailer:
         alias: fos_user.mailer.noop
