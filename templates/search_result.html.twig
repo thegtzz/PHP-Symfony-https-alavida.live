@@ -23,7 +23,7 @@
                     <div id="navbar-top-2" class="menu-primary-container">
                         <ul id="primary-menu" class="nav navbar-nav navbar-right">
                             <li id="menu-item-800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-800">
-                                <a title="Home" href="{{ path('get_index') }}">Home </a>
+                                <a title="Home" href="{{ path('index') }}">Home </a>
                             </li>
                             <li id="menu-item-800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-800">
                                 <a title="Contact" href=".footer">Contact</a>
@@ -46,7 +46,7 @@
                     </div>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="{{ path('get_index') }}">Home</a>
+                            <a href="{{ path('index') }}">Home</a>
                         </li>
                         <li>France</li>                  <!-- NEEDED TO BE A VARIABLE -->
                     </ol>
@@ -56,46 +56,46 @@
     </div>
 
     <!-- MAIN CONTENT -->
-{% for post in posts %}
 	<div  id="content"  class="main">
         <div class="container ">
             <section id="primary" class="content-area">
                 <main id="main" class="site-main content" role="main">
                     <div class="property-box-archive type-box item-per-row-3">
                         <div class="row">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="property-container">
-                                    <div class="property-image ">
-                                        <img width="640" height="425" src="{{ post.imageAvatar }}" class="property-box-thumbnail wp-post-image" alt="" />
-                                        <a href="{{ path('get_post_details') }}" class="property-box-image-inner "></a>
-                                    </div>
-                                    <div class="property-content">
-                                            <h3>
-                                                <a href="{{ path('get_post_details') }}">{{ post.title }}</a>
-                                                <small><i class="fa fa-map-marker"></i>{{ post.location }}</small>
-                                            </h3>
-                                            <p>{{ post.propertyDescription }}</p>
+                            {% for post in posts %}
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="property-container">
+                                        <div class="property-image ">
+                                            <img width="640" height="425" src="{{ post.imageAvatar }}" class="property-box-thumbnail wp-post-image" alt="" />
+                                            <a href="{{ path('get_post_details') }}" class="property-box-image-inner "></a>
                                         </div>
-                                        <div class="property-attributes text-center">
-                                            <div class="col-xs-4">
-                                                <h4>
-                                                    <i class="fa fa-money"></i>
-                                                    <p title="Price">{{ post.price }}</p>
-                                                </h4>
+                                        <div class="property-content">
+                                                <h3>
+                                                    <a href="{{ path('get_post_details') }}">{{ post.title }}</a>
+                                                    <small><i class="fa fa-map-marker"></i>{{ post.location }}</small>
+                                                </h3>
+                                                <p>{{ post.propertyDescription }}</p>
                                             </div>
+                                            <div class="property-attributes text-center">
+                                                <div class="col-xs-4">
+                                                    <h4>
+                                                        <i class="fa fa-money"></i>
+                                                        <p title="Price">{{ post.price }}</p>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        <div class="property-buttons">
+                                            <a href="{{ path('get_post_details') }}" class="property-btn">Browse</a>
                                         </div>
-                                    <div class="property-buttons">
-                                        <a href="{{ path('get_post_details') }}" class="property-btn">Browse</a>
                                     </div>
                                 </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </main>
             </section>
         </div>
 	</div>
-{% endfor %}
 </div>
 </body>
 {% endblock %}

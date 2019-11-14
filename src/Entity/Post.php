@@ -57,14 +57,14 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="text", nullable=true)
+     * @ORM\Column(name="price", type="float", nullable=true)
      */
     private $price;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="square", type="text", nullable=true)
+     * @ORM\Column(name="square", type="float", nullable=true)
      */
     private $square;
 
@@ -306,24 +306,24 @@ class Post
         return $this;
     }
 
-    public function getPrice(): ?string
+    public function getPrice(): ?float
     {
         return $this->price;
     }
 
-    public function setPrice(?string $price): self
+    public function setPrice(?float $price): self
     {
         $this->price = $price;
 
         return $this;
     }
 
-    public function getSquare(): ?string
+    public function getSquare(): ?float
     {
         return $this->square;
     }
 
-    public function setSquare(?string $square): self
+    public function setSquare(?float $square): self
     {
         $this->square = $square;
 

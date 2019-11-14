@@ -18,9 +18,9 @@ class PostRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('p');
 
         $qb
-            ->leftJoin('p', 'e_category', 'c', 'p.category_id = c.id')
-            ->leftJoin('p', 'e_location', 'c', 'p.location_id = l.id')
-            ->groupBy('t.id');
+            ->leftJoin('p.category', 'c')
+            ->leftJoin('p.location', 'l')
+            ->groupBy('p.id');
 
         if (isset($params["filter-location"]) && $location = $params["filter-location"]) {
             $qb
@@ -45,5 +45,7 @@ class PostRepository extends ServiceEntityRepository
                 ->andWhere('p.price <= :toPrice')
                 ->setParameter('fromPrice', $toPrice);
         }
+
+        return $qb->getQuery()->getResult();
     }
 }

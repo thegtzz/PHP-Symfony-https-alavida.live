@@ -1,47 +1,45 @@
 {%  set contactInformation = contact_info.getContactInformation %}
 
-{% if contactInformation %}
-    <div class="topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="topbar-nav topbar-left">
-                        {%  if contactInformation.email %}
-                            <li class="disabled"><a href="#"><i class="fa fa-envelope"></i> {{ contactInformation.email }}</a></li>
-                        {% endif %}
-                        {%  if contactInformation.phonenumber1 %}
-                            <li class="disabled"><a href=""><i class="fa fa-phone"></i> {{ contactInformation.phonenumber1 }}</a></li>
-                        {% endif %}
-                    </ul>
-                    <ul class="topbar-nav topbar-right hidden-xs">
-                        {%  if contactInformation.socialmedia1 %}
-                            <li>
-                                <a href="{{ contactInformation.socialmedia1 }}" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            </li>
-                        {% endif %}
-                        {%  if contactInformation.socialmedia1 %}
-                            <li>
-                                <a href="{{ contactInformation.socialmedia1 }}" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            </li>
-                        {% endif %}
-                        {%  if contactInformation.socialmedia1 %}
-                            <li>
-                                <a href="{{ contactInformation.socialmedia1 }}" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                            </li>
-                        {% endif %}
-                        {%  if contactInformation.socialmedia1 %}
-                            <li>
-                                <a href="{{ contactInformation.socialmedia1 }}" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        {% endif %}
-                        {%  if contactInformation.socialmedia1 %}
-                            <li>
-                                <a href="{{ contactInformation.socialmedia1 }}" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
+<div class="topbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="topbar-nav topbar-left">
+                    {% if contactInformation and contactInformation.email %}
+                        <li class="disabled"><a href="#"><i class="fa fa-envelope"></i> {{ contactInformation.email }}</a></li>
+                    {% endif %}
+                    {% if contactInformation and contactInformation.phonenumber1 %}
+                        <li class="disabled"><a href=""><i class="fa fa-phone"></i> {{ contactInformation.phonenumber1 }}</a></li>
+                    {% endif %}
+                </ul>
+                <ul class="topbar-nav topbar-right hidden-xs">
+                    {% if contactInformation and contactInformation.socialmedia1 %}
+                        <li>
+                            <a href="{{ contactInformation.socialmedia1 }}" title="Twitter"><i class="fa fa-twitter"></i></a>
+                        </li>
+                    {% endif %}
+                    {% if contactInformation and contactInformation.socialmedia1 %}
+                        <li>
+                            <a href="{{ contactInformation.socialmedia1 }}" title="Facebook"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    {% endif %}
+                    {% if contactInformation and contactInformation.socialmedia1 %}
+                        <li>
+                            <a href="{{ contactInformation.socialmedia1 }}" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                    {% endif %}
+                    {% if contactInformation and contactInformation.socialmedia1 %}
+                        <li>
+                            <a href="{{ contactInformation.socialmedia1 }}" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    {% endif %}
+                    {% if contactInformation and contactInformation.socialmedia1 %}
+                        <li>
+                            <a href="{{ contactInformation.socialmedia1 }}" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                        </li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </div>
-{% endif %}
+</div>

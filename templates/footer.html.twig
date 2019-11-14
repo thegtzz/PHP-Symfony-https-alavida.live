@@ -1,4 +1,5 @@
-{% for item in contactInfo %}
+{%  set contactInformation = contact_info.getContactInformation %}
+
 <div id="footer">
     <div class="container">
         <div class="row">
@@ -7,20 +8,26 @@
                     <div id="text-3" class="widget widget_text">
                         <div class="textwidget"><h2>Homelist</h2>
                             <address>
-                                {{ item.address }}
-                                <br />
-                                <i class="fa fa-phone"></i>
-                                <span>Telp. :</span> {{ item.phoneNumber2 }}
-                                <br />
-                                <i class="fa fa-envelope"></i>
-                                <span>Email :</span> {{ item.email }}
+                                {% if contactInformation and contactInformation.address %}
+                                    {{ contactInformation.address }}
+                                    <br />
+                                {% endif %}
+                                {% if contactInformation and contactInformation.phoneNumber2 %}
+                                    <i class="fa fa-phone"></i>
+                                    <span>Telp. :</span> {{ item.phoneNumber2 }}
+                                    <br />
+                                {% endif %}
+                                {% if contactInformation and contactInformation.email %}
+                                    <i class="fa fa-envelope"></i>
+                                    <span>Email :</span> {{ item.email }}
+                                {% endif %}
                             </address>
                         </div>
                     </div>
                     <div id="homelist_social_links-2" class="widget widget_homelist_social_links">
                         <ul class="social-links-icon">
                             <li>
-                                <a href="{{ item.socialMedia1 }}" title="Twitter">
+                                <a href="#" title="Twitter">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             </li>
@@ -129,4 +136,3 @@
         </div>
     </div>
 </div>
-{% endfor %}

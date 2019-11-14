@@ -14,6 +14,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Form\Type\AdminType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 final class PostAdmin extends AbstractAdmin
@@ -44,8 +45,8 @@ final class PostAdmin extends AbstractAdmin
             ->add('status', TextType::class, ['required' => false])
             ->add('propertyType', TextType::class, ['required' => false])
             ->add('contract', TextType::class, ['required' => false])
-            ->add('price', TextType::class, ['required' => false])
-            ->add('square', TextType::class, ['required' => false])
+            ->add('price', NumberType::class, ['required' => false])
+            ->add('square', NumberType::class, ['required' => false])
             ->add('propertyName', TextType::class, ['required' => false])
             ->add('contactPerson', TextType::class, ['required' => false])
             ->add('category', EntityType::class, [

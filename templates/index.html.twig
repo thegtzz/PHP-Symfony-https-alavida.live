@@ -29,19 +29,16 @@
                                     </ul>
                                     <div id="myTabContent" class="tab-content">
                                         <div class="tab-pane fade in rent-tab active" id="filter_rent_sale_widget-2-rent">
-                                            <form method="POST" action="/">
+                                            <form method="POST" action="{{ path('search_result') }}">
                                                 <div class="field col-md-3 col-sm-3 col-xs-12">
                                                     <div class="form-group">
                                                         <label for="rent_filter_rent_sale_widget-2_location">Локация</label>
-                                                        {% set categories = search_info.getCategories %}
                                                         <select class="form-control" name="filter-location" id="rent_filter_rent_sale_widget-2_location">
                                                             <option value="">All locations</option>
-                                                            <option value="35" >Панама</option>
-                                                            <option value="37" >Испания</option>
-                                                            <option value="46" >Корсика</option>
-                                                            <option value="47" >Карибские острова</option>
-                                                            <option value="60" >Российская Федерация</option>
-                                                            <option value="61" >Республика Беларусь</option>
+                                                            {% set locations = search_info.getLocations %}
+                                                            {% for location in  locations %}
+                                                                <option value="{{ location.name }}">{{ location.name }}</option>
+                                                            {% endfor %}
                                                         </select>
                                                     </div>
                                                 </div>
