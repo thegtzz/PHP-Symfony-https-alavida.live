@@ -51,12 +51,36 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: ContactInformation }
 
+    App\Admin\StaffAdmin:
+        arguments: [~, App\Entity\Staff, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: StaffAdmin }
+
+    App\Admin\CustomerAvatarAdmin:
+        arguments: [~, App\Entity\CustomerAvatar, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: CustomerAvatar }
+
+    App\Admin\CustomerReviewAdmin:
+        arguments: [~, App\Entity\CustomerReview, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: CustomerReview }
+
+    App\Admin\LocationAdmin:
+        arguments: [~, App\Entity\Location, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Location }
+
     App\Repository\CategoryRepository:
     App\Repository\PostRepository:
     App\Repository\AvatarImageRepository:
     App\Repository\PostImagesRepository:
     App\Repository\StaffAvatarRepository:
     App\Repository\ContactInformationRepository:
+    App\Repository\StaffRepository:
+    App\Repository\CustomerAvatarRepository:
+    App\Repository\CustomerReviewRepository:
+    App\Repository\LocationRepository:
 
 
 

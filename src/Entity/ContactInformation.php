@@ -34,43 +34,43 @@ class ContactInformation
 
     /**
      * @var string
-     * @ORM\Column(name="phoneNumber2", type="text")
+     * @ORM\Column(name="phoneNumber2", type="text", nullable=true)
      */
     private $phoneNumber2;
 
     /**
      * @var string
-     * @ORM\Column(name="phoneNumber3", type="text")
+     * @ORM\Column(name="phoneNumber3", type="text", nullable=true)
      */
     private $phoneNumber3;
 
     /**
      * @var string
-     * @ORM\Column(name="socialMedia1", type="text")
+     * @ORM\Column(name="socialMedia1", type="text", nullable=true)
      */
     private $socialMedia1;
 
     /**
      * @var string
-     * @ORM\Column(name="socialMedia2", type="text")
+     * @ORM\Column(name="socialMedia2", type="text", nullable=true)
      */
     private $socialMedia2;
 
     /**
      * @var string
-     * @ORM\Column(name="socialMedia3", type="text")
+     * @ORM\Column(name="socialMedia3", type="text", nullable=true)
      */
     private $socialMedia3;
 
     /**
      * @var string
-     * @ORM\Column(name="socialMedia4", type="text")
+     * @ORM\Column(name="socialMedia4", type="text", nullable=true)
      */
     private $socialMedia4;
 
     /**
      * @var string
-     * @ORM\Column(name="socialMedia5", type="text")
+     * @ORM\Column(name="socialMedia5", type="text", nullable=true)
      */
     private $socialMedia5;
 

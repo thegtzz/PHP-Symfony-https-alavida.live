@@ -1,3 +1,4 @@
+{% for item in contactInfo %}
 <div id="footer">
     <div class="container">
         <div class="row">
@@ -6,22 +7,20 @@
                     <div id="text-3" class="widget widget_text">
                         <div class="textwidget"><h2>Homelist</h2>
                             <address>
-                                <strong>Real Estate WordPress Theme</strong>
-                                <br />
-                                9.5 Main Street, Jjrn Plrt Btl
+                                {{ item.address }}
                                 <br />
                                 <i class="fa fa-phone"></i>
-                                <span>Telp. :</span> +62-345678910
+                                <span>Telp. :</span> {{ item.phoneNumber2 }}
                                 <br />
                                 <i class="fa fa-envelope"></i>
-                                <span>Email :</span> info@example.com
+                                <span>Email :</span> {{ item.email }}
                             </address>
                         </div>
                     </div>
                     <div id="homelist_social_links-2" class="widget widget_homelist_social_links">
                         <ul class="social-links-icon">
                             <li>
-                                <a href="#" title="Twitter">
+                                <a href="{{ item.socialMedia1 }}" title="Twitter">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             </li>
@@ -130,3 +129,4 @@
         </div>
     </div>
 </div>
+{% endfor %}

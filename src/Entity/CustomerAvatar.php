@@ -7,12 +7,12 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="e_post_images")
- * @ORM\Entity(repositoryClass="App\Repository\PostImagesRepository")
+ * @ORM\Table(name="e_customer_avatar")
+ * @ORM\Entity(repositoryClass="App\Repository\CustomerAvatarRepository")
  * @ORM\HasLifecycleCallbacks
  *
  */
-class PostImages
+class CustomerAvatar
 {
     const SERVER_PATH_TO_IMAGE_FOLDER = __DIR__.'\..\..\public\images';
 
@@ -36,11 +36,6 @@ class PostImages
      */
     private $filename;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Post", inversedBy="postImages")
-     * @ORM\JoinColumn(name="post_id", referencedColumnName="id", onDelete="CASCADE")
-     */
-    private $post;
 
     /**
      * @var \DateTime
@@ -48,8 +43,6 @@ class PostImages
      * @ORM\Column(name="updated", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  DEFAULT CURRENT_TIMESTAMP")
      */
     private $updated;
-
-
 
 
     public function getId(): ?int
@@ -98,17 +91,6 @@ class PostImages
     public function getFilename()
     {
         return $this->filename;
-    }
-
-    public function setPost(Post $post)
-    {
-        $this->post = $post;
-        return $this;
-    }
-
-    public function getPost()
-    {
-        return $this->post;
     }
 
     public function upload()
