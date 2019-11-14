@@ -28,58 +28,57 @@ class Post
     private $title;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="location", type="text")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Location", inversedBy="posts")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $location;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="status", type="text")
+     * @ORM\Column(name="status", type="text", nullable=true)
      */
     private $status;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="propertyType", type="text")
+     * @ORM\Column(name="propertyType", type="text", nullable=true)
      */
     private $propertyType;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="contract", type="text")
+     * @ORM\Column(name="contract", type="text", nullable=true)
      */
     private $contract;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="text")
+     * @ORM\Column(name="price", type="text", nullable=true)
      */
     private $price;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="square", type="text")
+     * @ORM\Column(name="square", type="text", nullable=true)
      */
     private $square;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="propertyName", type="text")
+     * @ORM\Column(name="propertyName", type="text", nullable=true)
      */
     private $propertyName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="contactPerson", type="text")
+     * @ORM\Column(name="contactPerson", type="text", nullable=true)
      */
     private $contactPerson;
 
@@ -91,123 +90,93 @@ class Post
 
     /**
      * @var string
-     * @ORM\Column(name="propertyDescription", type="text")
+     * @ORM\Column(name="propertyDescription", type="text", nullable=true)
      */
     private $propertyDescription;
 
     /**
      * @var string
-     * @ORM\Column(name="youtubeLink", type="text")
+     * @ORM\Column(name="youtubeLink", type="text", nullable=true)
      */
     private $youtubeLink;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDistance1", type="text")
+     * @ORM\Column(name="publicFacilitiesDistance1", type="text", nullable=true)
      */
     private $publicFacilitiesDistance1;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDescription1", type="text")
+     * @ORM\Column(name="publicFacilitiesDescription1", type="text", nullable=true)
      */
     private $publicFacilitiesDescription1;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDistance2", type="text")
+     * @ORM\Column(name="publicFacilitiesDistance2", type="text", nullable=true)
      */
     private $publicFacilitiesDistance2;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDescription2", type="text")
+     * @ORM\Column(name="publicFacilitiesDescription2", type="text", nullable=true)
      */
     private $publicFacilitiesDescription2;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDistance3", type="text")
+     * @ORM\Column(name="publicFacilitiesDistance3", type="text", nullable=true)
      */
     private $publicFacilitiesDistance3;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDescription3", type="text")
+     * @ORM\Column(name="publicFacilitiesDescription3", type="text", nullable=true)
      */
     private $publicFacilitiesDescription3;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDistance4", type="text")
+     * @ORM\Column(name="publicFacilitiesDistance4", type="text", nullable=true)
      */
     private $publicFacilitiesDistance4;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDescription4", type="text")
+     * @ORM\Column(name="publicFacilitiesDescription4", type="text", nullable=true)
      */
     private $publicFacilitiesDescription4;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDistance5", type="text")
+     * @ORM\Column(name="publicFacilitiesDistance5", type="text", nullable=true)
      */
     private $publicFacilitiesDistance5;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDescription5", type="text")
+     * @ORM\Column(name="publicFacilitiesDescription5", type="text", nullable=true)
      */
     private $publicFacilitiesDescription5;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDistance6", type="text")
+     * @ORM\Column(name="publicFacilitiesDistance6", type="text", nullable=true)
      */
     private $publicFacilitiesDistance6;
 
     /**
      * @var string
-     * @ORM\Column(name="publicFacilitiesDescription6", type="text")
+     * @ORM\Column(name="publicFacilitiesDescription6", type="text", nullable=true)
      */
     private $publicFacilitiesDescription6;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\ImageAvatar", cascade={"persist"})
-     * @ORM\JoinColumn(name="image_avatar_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="image_avatar_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $imageAvatar;
-
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\StaffAvatar", cascade={"persist"})
-     * @ORM\JoinColumn(name="staff_avatar_id", referencedColumnName="id")
-     */
-    private $staffAvatar;
-
-    /**
-     * @var string
-     * @ORM\Column(name="staffName", type="text")
-     */
-    private $staffName;
-
-    /**
-     * @var string
-     * @ORM\Column(name="staffEmail", type="text")
-     */
-    private $staffEmail;
-
-    /**
-     * @var string
-     * @ORM\Column(name="staffPhone", type="text")
-     */
-    private $staffPhone;
-
-    /**
-     * @var string
-     * @ORM\Column(name="staffDescription", type="text")
-     */
-    private $staffDescription;
 
     /**
      * @return mixed
@@ -228,6 +197,7 @@ class Post
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\PostImages", mappedBy="post", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
      */
     private $postImages;
 
@@ -288,12 +258,12 @@ class Post
         return $this;
     }
 
-    public function getLocation(): ?string
+    public function getLocation(): ?Location
     {
         return $this->location;
     }
 
-    public function setLocation(?string $location): self
+    public function setLocation(?Location $location): self
     {
         $this->location = $location;
 
@@ -560,71 +530,6 @@ class Post
     public function setPublicFacilitiesDescription6(?string $publicFacilitiesDescription6): self
     {
         $this->publicFacilitiesDescription6 = $publicFacilitiesDescription6;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStaffAvatar()
-    {
-        return $this->staffAvatar;
-    }
-
-    /**
-     * @param mixed $staffAvatar
-     */
-    public function setStaffAvatar($staffAvatar)
-    {
-        $this->staffAvatar = $staffAvatar;
-        return $this;
-    }
-
-    public function getStaffName(): ?string
-    {
-        return $this->staffName;
-    }
-
-    public function setStaffName(?string $staffName): self
-    {
-        $this->staffName = $staffName;
-
-        return $this;
-    }
-
-    public function getStaffEmail(): ?string
-    {
-        return $this->staffEmail;
-    }
-
-    public function setStaffEmail(?string $staffEmail): self
-    {
-        $this->staffEmail = $staffEmail;
-
-        return $this;
-    }
-
-    public function getStaffPhone(): ?string
-    {
-        return $this->staffPhone;
-    }
-
-    public function setStaffPhone(?string $staffPhone): self
-    {
-        $this->staffPhone = $staffPhone;
-
-        return $this;
-    }
-
-    public function getStaffDescription(): ?string
-    {
-        return $this->staffDescription;
-    }
-
-    public function setStaffDescription(?string $staffDescription): self
-    {
-        $this->staffDescription = $staffDescription;
 
         return $this;
     }

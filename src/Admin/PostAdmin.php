@@ -3,8 +3,10 @@ namespace App\Admin;
 
 use App\Entity\ImageAvatar;
 use App\Entity\Category;
+use App\Entity\Location;
 use App\Form\PostImageType;
 use App\Repository\CategoryRepository;
+use App\Repository\LocationRepository;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -30,7 +32,15 @@ final class PostAdmin extends AbstractAdmin
                 'by_reference' 		=> false,
                 'required'			=> false,
             ])
-            ->add('location', TextType::class)
+            ->add('location', EntityType::class, [
+                'class' => Location::class,
+                'query_builder' => function(LocationRepository $er) {
+                    return$er->createQueryBuilder('l')
+                        ->orderBy('l.name', 'ASC');
+                },
+                'choice_label' => 'name',
+                'choice_value' => 'id',
+            ])
             ->add('status', TextType::class, ['required' => false])
             ->add('propertyType', TextType::class, ['required' => false])
             ->add('contract', TextType::class, ['required' => false])
@@ -60,15 +70,7 @@ final class PostAdmin extends AbstractAdmin
             ->add('publicFacilitiesDistance5', TextType::class, ['required' => false])
             ->add('publicFacilitiesDescription5', TextType::class, ['required' => false])
             ->add('publicFacilitiesDistance6', TextType::class, ['required' => false])
-            ->add('publicFacilitiesDescription6', TextType::class, ['required' => false])
-            ->add('staffAvatar', AdminType::class, [
-                'delete' => false,
-                'required' => false,
-            ])
-            ->add('staffName', TextType::class, ['required' => false])
-            ->add('staffEmail', TextType::class, ['required' => false])
-            ->add('staffPhone', TextType::class, ['required' => false])
-            ->add('staffDescription', TextType::class, ['required' => false]);
+            ->add('publicFacilitiesDescription6', TextType::class, ['required' => false]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -99,12 +101,7 @@ final class PostAdmin extends AbstractAdmin
             ->add('publicFacilitiesDistance5')
             ->add('publicFacilitiesDescription5')
             ->add('publicFacilitiesDistance6')
-            ->add('publicFacilitiesDescription6')
-            ->add('staffAvatar')
-            ->add('staffName')
-            ->add('staffEmail')
-            ->add('staffPhone')
-            ->add('staffDescription');
+            ->add('publicFacilitiesDescription6');
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -135,12 +132,7 @@ final class PostAdmin extends AbstractAdmin
             ->addIdentifier('publicFacilitiesDistance5')
             ->addIdentifier('publicFacilitiesDescription5')
             ->addIdentifier('publicFacilitiesDistance6')
-            ->addIdentifier('publicFacilitiesDescription6')
-            ->addIdentifier('staffAvatar')
-            ->addIdentifier('staffName')
-            ->addIdentifier('staffEmail')
-            ->addIdentifier('staffPhone')
-            ->addIdentifier('staffDescription');
+            ->addIdentifier('publicFacilitiesDescription6');
     }
 
     public function prePersist($page)
@@ -160,8 +152,7 @@ final class PostAdmin extends AbstractAdmin
             // detect embedded Admins that manage Images
             if ($fieldDescription->getType() === 'sonata_type_admin' &&
                 ($associationMapping = $fieldDescription->getAssociationMapping()) &&
-                ($associationMapping['targetEntity'] === 'App\Entity\ImageAvatar' ||
-                $associationMapping['targetEntity'] === 'App\Entity\StaffAvatar')
+                ($associationMapping['targetEntity'] === 'App\Entity\ImageAvatar')
             ) {
                 $getter = 'get'.$fieldName;
                 $setter = 'set'.$fieldName;
