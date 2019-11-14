@@ -12,19 +12,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class SearchController extends AbstractController
 {
     /**
-     * @Route("/search_result", methods={"GET","POST"}, name="search_result")
+     * @Route("/search_result", methods={"GET"}, name="search_result")
      */
     public function indexAction(Request $request, PostRepository $postRepository): Response
     {
-        if ($request->isMethod('POST')){
+        $posts = $postRepository->search($request->query->all());
+        $location = $request->get('filter-location');
 
-            $posts = $postRepository->search($request->request->all());
-
-            return $this->render('search_result.html.twig', ['posts' => $posts]);
-        }
-
-        $posts = $postRepository->findAll();
-
-        return $this->render('search_result.html.twig', ['posts' => $posts]);
+        return $this->render('search_result.html.twig', ['posts' => $posts, 'location' => $location]);
     }
 }

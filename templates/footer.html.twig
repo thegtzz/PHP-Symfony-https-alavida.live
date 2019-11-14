@@ -12,14 +12,14 @@
                                     {{ contactInformation.address }}
                                     <br />
                                 {% endif %}
-                                {% if contactInformation and contactInformation.phoneNumber2 %}
+                                {% if contactInformation and contactInformation.phoneNumber1 %}
                                     <i class="fa fa-phone"></i>
-                                    <span>Telp. :</span> {{ item.phoneNumber2 }}
+                                    <span>Telp. :</span> {{ contactInformation.phoneNumber1 }}
                                     <br />
                                 {% endif %}
                                 {% if contactInformation and contactInformation.email %}
                                     <i class="fa fa-envelope"></i>
-                                    <span>Email :</span> {{ item.email }}
+                                    <span>Email :</span> {{ contactInformation.email }}
                                 {% endif %}
                             </address>
                         </div>
