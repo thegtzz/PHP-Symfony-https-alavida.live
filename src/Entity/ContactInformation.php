@@ -46,33 +46,21 @@ class ContactInformation
 
     /**
      * @var string
-     * @ORM\Column(name="socialMedia1", type="text", nullable=true)
+     * @ORM\Column(name="facebook", type="text", nullable=true)
      */
-    private $socialMedia1;
+    private $facebook;
 
     /**
      * @var string
-     * @ORM\Column(name="socialMedia2", type="text", nullable=true)
+     * @ORM\Column(name="instagram", type="text", nullable=true)
      */
-    private $socialMedia2;
+    private $instagram;
 
     /**
      * @var string
-     * @ORM\Column(name="socialMedia3", type="text", nullable=true)
+     * @ORM\Column(name="linkedin", type="text", nullable=true)
      */
-    private $socialMedia3;
-
-    /**
-     * @var string
-     * @ORM\Column(name="socialMedia4", type="text", nullable=true)
-     */
-    private $socialMedia4;
-
-    /**
-     * @var string
-     * @ORM\Column(name="socialMedia5", type="text", nullable=true)
-     */
-    private $socialMedia5;
+    private $linkedin;
 
     /**
      * @var string
@@ -134,62 +122,38 @@ class ContactInformation
         return $this;
     }
 
-    public function getSocialMedia1(): ?string
+    public function getFacebook(): ?string
     {
-        return $this->socialMedia1;
+        return $this->facebook;
     }
 
-    public function setSocialMedia1(?string $socialMedia1): self
+    public function setFacebook(?string $facebook): self
     {
-        $this->socialMedia1 = $socialMedia1;
+        $this->facebook = $facebook;
 
         return $this;
     }
 
-    public function getSocialMedia2(): ?string
+    public function getInstagram(): ?string
     {
-        return $this->socialMedia2;
+        return $this->instagram;
     }
 
-    public function setSocialMedia2(?string $socialMedia2): self
+    public function setInstagram(?string $instagram): self
     {
-        $this->socialMedia2 = $socialMedia2;
+        $this->instagram = $instagram;
 
         return $this;
     }
 
-    public function getSocialMedia3(): ?string
+    public function getLinkedin(): ?string
     {
-        return $this->socialMedia3;
+        return $this->linkedin;
     }
 
-    public function setSocialMedia3(?string $socialMedia3): self
+    public function setLinkedin(?string $linkedin): self
     {
-        $this->socialMedia3 = $socialMedia3;
-
-        return $this;
-    }
-
-    public function getSocialMedia4(): ?string
-    {
-        return $this->socialMedia4;
-    }
-
-    public function setSocialMedia4(?string $socialMedia4): self
-    {
-        $this->socialMedia4 = $socialMedia4;
-
-        return $this;
-    }
-
-    public function getSocialMedia5(): ?string
-    {
-        return $this->socialMedia5;
-    }
-
-    public function setSocialMedia5(?string $socialMedia5): self
-    {
-        $this->socialMedia5 = $socialMedia5;
+        $this->linkedin = $linkedin;
 
         return $this;
     }

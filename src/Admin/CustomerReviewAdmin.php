@@ -19,8 +19,14 @@ final class CustomerReviewAdmin extends AbstractAdmin
             ->add('customerAvatar', AdminType::class, [
                 'delete' => false,
             ])
-            ->add('customerShortReview', TextType::class, ['required' => false])
-            ->add('customerMainReview', TextType::class, ['required' => false])
+            ->add('customerShortReviewRu', TextType::class, ['required' => false])
+            ->add('customerShortReviewEn', TextType::class, ['required' => false])
+            ->add('customerShortReviewPl', TextType::class, ['required' => false])
+            ->add('customerShortReviewFr', TextType::class, ['required' => false])
+            ->add('customerMainReviewRu', TextType::class, ['required' => false])
+            ->add('customerMainReviewEn', TextType::class, ['required' => false])
+            ->add('customerMainReviewPl', TextType::class, ['required' => false])
+            ->add('customerMainReviewFr', TextType::class, ['required' => false])
             ->add('customerName', TextType::class, ['required' => false]);
     }
 
@@ -28,8 +34,14 @@ final class CustomerReviewAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('customerAvatar')
-            ->add('customerShortReview')
-            ->add('customerMainReview')
+            ->add('customerShortReviewRu')
+            ->add('customerShortReviewEn')
+            ->add('customerShortReviewPl')
+            ->add('customerShortReviewFr')
+            ->add('customerMainReviewRu')
+            ->add('customerMainReviewEn')
+            ->add('customerMainReviewPl')
+            ->add('customerMainReviewFr')
             ->add('customerName');
     }
 
@@ -37,8 +49,14 @@ final class CustomerReviewAdmin extends AbstractAdmin
     {
         $listMapper
             ->addIdentifier('customerAvatar')
-            ->addIdentifier('customerShortReview')
-            ->addIdentifier('customerMainReview')
+            ->addIdentifier('customerShortReviewRu')
+            ->addIdentifier('customerShortReviewEn')
+            ->addIdentifier('customerShortReviewPl')
+            ->addIdentifier('customerShortReviewFr')
+            ->addIdentifier('customerMainReviewRu')
+            ->addIdentifier('customerMainReviewEn')
+            ->addIdentifier('customerMainReviewPl')
+            ->addIdentifier('customerMainReviewFr')
             ->addIdentifier('customerName');
     }
 

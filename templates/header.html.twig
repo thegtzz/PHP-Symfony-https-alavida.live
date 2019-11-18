@@ -11,31 +11,24 @@
                     {% if contactInformation and contactInformation.phonenumber1 %}
                         <li class="disabled"><a href=""><i class="fa fa-phone"></i> {{ contactInformation.phonenumber1 }}</a></li>
                     {% endif %}
+                    {% if contactInformation and contactInformation.phonenumber2 %}
+                        <li class="disabled"><a href=""><i class="fa fa-phone"></i> {{ contactInformation.phonenumber2 }}</a></li>
+                    {% endif %}
                 </ul>
                 <ul class="topbar-nav topbar-right hidden-xs">
-                    {% if contactInformation and contactInformation.socialmedia1 %}
+                    {% if contactInformation and contactInformation.facebook %}
                         <li>
-                            <a href="{{ contactInformation.socialmedia1 }}" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="{{ contactInformation.facebook }}" title="Facebook"><i class="fa fa-facebook"></i></a>
                         </li>
                     {% endif %}
-                    {% if contactInformation and contactInformation.socialmedia1 %}
+                    {% if contactInformation and contactInformation.instagram %}
                         <li>
-                            <a href="{{ contactInformation.socialmedia1 }}" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="{{ contactInformation.instagram }}" title="Instagram"><i class="fa fa-instagram"></i></a>
                         </li>
                     {% endif %}
-                    {% if contactInformation and contactInformation.socialmedia1 %}
+                    {% if contactInformation and contactInformation.linkedin %}
                         <li>
-                            <a href="{{ contactInformation.socialmedia1 }}" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                        </li>
-                    {% endif %}
-                    {% if contactInformation and contactInformation.socialmedia1 %}
-                        <li>
-                            <a href="{{ contactInformation.socialmedia1 }}" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    {% endif %}
-                    {% if contactInformation and contactInformation.socialmedia1 %}
-                        <li>
-                            <a href="{{ contactInformation.socialmedia1 }}" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                            <a href="{{ contactInformation.linkedin }}" title="Linkedin"><i class="fa fa-linkedin"></i></a>
                         </li>
                     {% endif %}
                 </ul>

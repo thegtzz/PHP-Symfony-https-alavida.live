@@ -19,11 +19,9 @@ final class ContactInformationAdmin extends AbstractAdmin
             ->add('phoneNumber1', TextType::class)
             ->add('phoneNumber2', TextType::class, ['required' => false])
             ->add('phoneNumber3', TextType::class, ['required' => false])
-            ->add('socialMedia1', TextType::class, ['required' => false])
-            ->add('socialMedia2', TextType::class, ['required' => false])
-            ->add('socialMedia3', TextType::class, ['required' => false])
-            ->add('socialMedia4', TextType::class, ['required' => false])
-            ->add('socialMedia5', TextType::class, ['required' => false])
+            ->add('facebook', TextType::class, ['required' => false])
+            ->add('instagram', TextType::class, ['required' => false])
+            ->add('linkedin', TextType::class, ['required' => false])
             ->add('address', TextType::class);
     }
 
@@ -34,11 +32,9 @@ final class ContactInformationAdmin extends AbstractAdmin
             ->add('phoneNumber1')
             ->add('phoneNumber2')
             ->add('phoneNumber3')
-            ->add('socialMedia1')
-            ->add('socialMedia2')
-            ->add('socialMedia3')
-            ->add('socialMedia4')
-            ->add('socialMedia5')
+            ->add('facebook')
+            ->add('instagram')
+            ->add('linkedin')
             ->add('address');
     }
 
@@ -49,11 +45,9 @@ final class ContactInformationAdmin extends AbstractAdmin
             ->addIdentifier('phoneNumber1')
             ->addIdentifier('phoneNumber2')
             ->addIdentifier('phoneNumber3')
-            ->addIdentifier('socialMedia1')
-            ->addIdentifier('socialMedia2')
-            ->addIdentifier('socialMedia3')
-            ->addIdentifier('socialMedia4')
-            ->addIdentifier('socialMedia5')
+            ->addIdentifier('facebook')
+            ->addIdentifier('instagram')
+            ->addIdentifier('linkedin')
             ->addIdentifier('address');
     }
 }

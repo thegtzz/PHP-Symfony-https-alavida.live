@@ -17,6 +17,10 @@
                                     <span>Telp. :</span> {{ contactInformation.phoneNumber1 }}
                                     <br />
                                 {% endif %}
+                                {% if contactInformation and contactInformation.phonenumber1 %}
+                                    <span style="margin-left: 61px">{{ contactInformation.phoneNumber1 }}</span>
+                                    <br />
+                                {% endif %}
                                 {% if contactInformation and contactInformation.email %}
                                     <i class="fa fa-envelope"></i>
                                     <span>Email :</span> {{ contactInformation.email }}
@@ -26,30 +30,26 @@
                     </div>
                     <div id="homelist_social_links-2" class="widget widget_homelist_social_links">
                         <ul class="social-links-icon">
+                            {% if contactInformation and contactInformation.facebook %}
                             <li>
-                                <a href="#" title="Twitter">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="Facebook">
+                                <a href="{{ contactInformation.facebook }}" title="Facebook">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </li>
+                            {% endif %}
+                            {% if contactInformation and contactInformation.instagram %}
                             <li>
-                                <a href="#" title="Google Plus">
-                                    <i class="fa fa-google-plus"></i>
+                                <a href="{{ contactInformation.instagram }}" title="Instagram">
+                                    <i class="fa fa-instagram"></i>
                                 </a>
                             </li>
-                            <li><a href="#" title="Linkedin">
+                            {% endif %}
+                            {% if contactInformation and contactInformation.linkedin %}
+                            <li><a href="{{ contactInformation.linkedin }}" title="Linkedin">
                                     <i class="fa fa-linkedin"></i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#" title="Pinterest">
-                                    <i class="fa fa-pinterest"></i>
-                                </a>
-                            </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -98,31 +98,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="widget">
-                    <div id="nav_menu-3" class="widget widget_nav_menu">
-                        <h3>Quick Links</h3>
-                        <div class="menu-quick-links-container">
-                            <ul id="menu-quick-links" class="menu">
-                                <li id="menu-item-483" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-483">
-                                    <a href="http://www.ongoingthemes.com/homelist/about-2/">About Realest</a></li>
-                                <li id="menu-item-824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-824">
-                                    <a href="http://www.ongoingthemes.com/homelist/listings-quality-policy/">Listings Quality Policy</a>
-                                </li>
-                                <li id="menu-item-825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825">
-                                    <a href="http://www.ongoingthemes.com/homelist/go-mobile-with-realest/">Go Mobile with Homelist</a>
-                                </li>
-                                <li id="menu-item-752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-752">
-                                    <a href="http://www.ongoingthemes.com/homelist/create-property/">Submit Your Listings</a>
-                                </li>
-                                <li id="menu-item-805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-805">
-                                    <a href="http://www.ongoingthemes.com/homelist/contact-us/">Ask a question</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Copyrights -->
@@ -132,6 +107,7 @@
                 <a href="#top" class="btn btn-success scroltop">
                     <i class="fa fa-angle-up"></i>
                 </a>
+                <small><p class="col-lg-offset-5">© 2019 mydomain.com All Rights Reserved</p></small>
             </div>
         </div>
     </div>

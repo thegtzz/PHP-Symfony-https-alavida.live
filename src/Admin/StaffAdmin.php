@@ -20,8 +20,14 @@ final class StaffAdmin extends AbstractAdmin
             ->add('staffAvatar', AdminType::class, [
                 'delete' => false,
             ])
-            ->add('staffName', TextType::class, ['required' => false])
-            ->add('staffPosition', TextType::class, ['required' => false])
+            ->add('staffNameRu', TextType::class, ['required' => false])
+            ->add('staffNameEn', TextType::class, ['required' => false])
+            ->add('staffNamePl', TextType::class, ['required' => false])
+            ->add('staffNameFr', TextType::class, ['required' => false])
+            ->add('staffPositionRu', TextType::class, ['required' => false])
+            ->add('staffPositionEn', TextType::class, ['required' => false])
+            ->add('staffPositionPl', TextType::class, ['required' => false])
+            ->add('staffPositionFr', TextType::class, ['required' => false])
             ->add('staffEmail', TextType::class, ['required' => false])
             ->add('staffPhone', TextType::class, ['required' => false]);
     }
@@ -30,8 +36,14 @@ final class StaffAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('staffAvatar')
-            ->add('staffName')
-            ->add('staffPosition')
+            ->add('staffNameRU')
+            ->add('staffNameEn')
+            ->add('staffNamePl')
+            ->add('staffNameFr')
+            ->add('staffPositionRu')
+            ->add('staffPositionEn')
+            ->add('staffPositionPl')
+            ->add('staffPositionFr')
             ->add('staffEmail')
             ->add('staffPhone');
     }
@@ -40,8 +52,14 @@ final class StaffAdmin extends AbstractAdmin
     {
         $listMapper
             ->addIdentifier('staffAvatar')
-            ->addIdentifier('staffName')
-            ->addIdentifier('staffPosition')
+            ->addIdentifier('staffNameRu')
+            ->addIdentifier('staffNameEn')
+            ->addIdentifier('staffNamePl')
+            ->addIdentifier('staffNameFr')
+            ->addIdentifier('staffPositionRu')
+            ->addIdentifier('staffPositionEn')
+            ->addIdentifier('staffPositionPl')
+            ->addIdentifier('staffPositionFr')
             ->addIdentifier('staffEmail')
             ->addIdentifier('staffPhone');
     }

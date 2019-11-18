@@ -28,15 +28,51 @@ class Staff
 
     /**
      * @var string
-     * @ORM\Column(name="staffName", type="text", nullable=true)
+     * @ORM\Column(name="staffNameRu", type="text", nullable=true)
      */
-    private $staffName;
+    private $staffNameRu;
 
     /**
      * @var string
-     * @ORM\Column(name="staffPosition", type="text", nullable=true)
+     * @ORM\Column(name="staffNameEn", type="text", nullable=true)
      */
-    private $staffPosition;
+    private $staffNameEn;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffNamePl", type="text", nullable=true)
+     */
+    private $staffNamePl;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffNameFr", type="text", nullable=true)
+     */
+    private $staffNameFr;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffPositionRu", type="text", nullable=true)
+     */
+    private $staffPositionRu;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffPositionEn", type="text", nullable=true)
+     */
+    private $staffPositionEn;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffPositionPl", type="text", nullable=true)
+     */
+    private $staffPositionPl;
+
+    /**
+     * @var string
+     * @ORM\Column(name="staffPositionFr", type="text", nullable=true)
+     */
+    private $staffPositionFr;
 
     /**
      * @var string
@@ -72,26 +108,98 @@ class Staff
         return $this;
     }
 
-    public function getStaffName(): ?string
+    public function getStaffNameRu(): ?string
     {
-        return $this->staffName;
+        return $this->staffNameRu;
     }
 
-    public function setStaffName(?string $staffName): self
+    public function setStaffNameRu(?string $staffNameRu): self
     {
-        $this->staffName = $staffName;
+        $this->staffNameRu = $staffNameRu;
 
         return $this;
     }
 
-    public function getStaffPosition(): ?string
+    public function getStaffNameEn(): ?string
     {
-        return $this->staffPosition;
+        return $this->staffNameEn;
     }
 
-    public function setStaffPosition(?string $staffPosition): self
+    public function setStaffNameEn(?string $staffNameEn): self
     {
-        $this->staffPosition = $staffPosition;
+        $this->staffNameEn = $staffNameEn;
+
+        return $this;
+    }
+
+    public function getStaffNamePl(): ?string
+    {
+        return $this->staffNamePl;
+    }
+
+    public function setStaffNamePl(?string $staffNamePl): self
+    {
+        $this->staffNamePl = $staffNamePl;
+
+        return $this;
+    }
+
+    public function getStaffNameFr(): ?string
+    {
+        return $this->staffNameFr;
+    }
+
+    public function setStaffNameFr(?string $staffNameFr): self
+    {
+        $this->staffNameFr = $staffNameFr;
+
+        return $this;
+    }
+
+    public function getStaffPositionRu(): ?string
+    {
+        return $this->staffPositionRu;
+    }
+
+    public function setStaffPositionRu(?string $staffPositionRu): self
+    {
+        $this->staffPositionRu = $staffPositionRu;
+
+        return $this;
+    }
+
+    public function getStaffPositionEn(): ?string
+    {
+        return $this->staffPositionEn;
+    }
+
+    public function setStaffPositionEn(?string $staffPositionEn): self
+    {
+        $this->staffPositionEn = $staffPositionEn;
+
+        return $this;
+    }
+
+    public function getStaffPositionPl(): ?string
+    {
+        return $this->staffPositionPl;
+    }
+
+    public function setStaffPositionPl(?string $staffPositionPl): self
+    {
+        $this->staffPositionPl = $staffPositionPl;
+
+        return $this;
+    }
+
+    public function getStaffPositionFr(): ?string
+    {
+        return $this->staffPositionFr;
+    }
+
+    public function setStaffPositionFr(?string $staffPositionFr): self
+    {
+        $this->staffPositionFr = $staffPositionFr;
 
         return $this;
     }
