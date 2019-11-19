@@ -3,5 +3,6 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     globals:
-        contact_info: '@App\Service\ContactInfoService'
-        search_info:  '@App\Service\SearchService'
+        contact_info:      '@App\Service\ContactInfoService'
+        search_info:       '@App\Service\SearchService'
+        activated_locales: '%activated_locales%'

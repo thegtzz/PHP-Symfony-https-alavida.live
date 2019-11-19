@@ -31,6 +31,27 @@
                             <a href="{{ contactInformation.linkedin }}" title="Linkedin"><i class="fa fa-linkedin"></i></a>
                         </li>
                     {% endif %}
+
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{ app.request.locale|upper }}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                {% for locale in activated_locales %}
+                                    {% if locale != app.request.locale %}
+                                        <li>
+                                            <a class="dropdown-item"
+                                               href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'_locale': locale})) }}">
+                                                {{ locale|upper }}
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

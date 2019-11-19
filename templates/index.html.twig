@@ -17,7 +17,7 @@
         </div>
 
         <div id="filter_rent_sale_widget-2" class="widget widget_filter_rent_sale_widget">
-            <h2 class="widgettitle">	Search	</h2>
+            <h2 class="widgettitle">{{ 'Search'|trans }}</h2>
             <div class="main-search">
                 <div class="container">
                     <div class="row">
@@ -29,10 +29,10 @@
                                     </ul>
                                     <div id="myTabContent" class="tab-content">
                                         <div class="tab-pane fade in rent-tab active" id="filter_rent_sale_widget-2-rent">
-                                            <form method="GET" action="{{ path('search_result') }}">
+                                            <form method="GET" action="{{ path('get_search_result') }}">
                                                 <div class="field col-md-3 col-sm-3 col-xs-12">
                                                     <div class="form-group">
-                                                        <label for="rent_filter_rent_sale_widget-2_location">Локация</label>
+                                                        <label for="rent_filter_rent_sale_widget-2_location">{% trans %}Location{% endtrans %}</label>
                                                         <select class="form-control" name="filter-location" id="rent_filter_rent_sale_widget-2_location">
                                                             <option value="">All locations</option>
                                                             {% set locations = search_info.getLocations %}
@@ -44,7 +44,7 @@
                                                 </div>
                                                 <div class="field col-md-3 col-sm-3 col-xs-12">
                                                     <div class="form-group">
-                                                        <label for="rent_filter_rent_sale_widget-2_property_type">Тип</label>
+                                                        <label for="rent_filter_rent_sale_widget-2_property_type">{% trans %}Type{% endtrans %}</label>
                                                         <select class="form-control" name="filter-property-type" id="rent_filter_rent_sale_widget-2_property_type">
                                                             <option value="">All property types</option>
                                                             {% set categories = search_info.getCategories %}
@@ -56,7 +56,7 @@
                                                 </div>
                                                 <div class="field col-md-3 col-sm-3 col-xs-6">
                                                     <div class="form-group">
-                                                        <label for="rent_filter_rent_sale_widget-2_price_from">Цена от</label>
+                                                        <label for="rent_filter_rent_sale_widget-2_price_from">{% trans %}Price from{% endtrans %}</label>
                                                         <input type="number" min="0" name="filter-price-from"
                                                                class="form-control" value=""
                                                                id="rent_filter_rent_sale_widget-2_price_from"
@@ -65,7 +65,7 @@
                                                 </div>
                                                 <div class="field col-md-3 col-sm-3 col-xs-6">
                                                     <div class="form-group">
-                                                        <label for="rent_filter_rent_sale_widget-2_price_to">Цена до</label>
+                                                        <label for="rent_filter_rent_sale_widget-2_price_to">{% trans %}Price to{% endtrans %}</label>
                                                         <input type="number" min="0" name="filter-price-to"
                                                                class="form-control" value=""
                                                                id="rent_filter_rent_sale_widget-2_price_to"
@@ -75,7 +75,7 @@
                                                 <div class="col-md-3" style="float: right">
                                                     <div class="form-group">
                                                         <label>&nbsp;</label>
-                                                        <button class="btn btn-success btn-block">Search</button>
+                                                        <button class="btn btn-success btn-block">{% trans %}Search{% endtrans %}</button>
                                                     </div>
                                                 </div>
                                             </form>

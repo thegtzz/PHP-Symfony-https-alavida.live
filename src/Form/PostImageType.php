@@ -1,6 +1,6 @@
 <?php
-namespace App\Form;
 
+namespace App\Form;
 
 use App\Entity\PostImages;
 use Symfony\Component\Form\AbstractType;
@@ -21,7 +21,6 @@ class PostImageType extends AbstractType
                     new File(),
                 ),
             ));
-
     }
 
     public function configureOptions(OptionsResolver $resolver)

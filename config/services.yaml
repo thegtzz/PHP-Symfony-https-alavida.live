@@ -1,20 +1,20 @@
 
 parameters:
+    locale: en
+    activated_locales: ['%locale%','fr','ru','pl']
+    locales_requirements: '%locale%|fr|ru|pl'
 
 services:
     security.acl.permission.map:
         class: Sonata\AdminBundle\Security\Acl\Permission\AdminPermissionMap
 
-
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-
     App\:
         resource: '../src/*'
         exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
-
 
     App\Controller\:
         resource: '../src/Controller'
@@ -23,7 +23,6 @@ services:
     forms:
         namespace: App\Form\
         resource: '../src/Form'
-
 
     App\Admin\PostAdmin:
         arguments: [~, App\Entity\Post, ~]

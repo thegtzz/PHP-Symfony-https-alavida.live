@@ -9,11 +9,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController extends AbstractController
 {
     /**
-     * @Route("/", methods={"GET"}, name="index")
+     * @Route("/{_locale}/", methods={"GET"}, name="get_index", requirements={"_locale"="%locales_requirements%"})
      */
     public function indexAction(): Response
     {
-
         return $this->render('index.html.twig');
     }
 }

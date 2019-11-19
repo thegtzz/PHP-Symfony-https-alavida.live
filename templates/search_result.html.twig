@@ -23,7 +23,7 @@
                     <div id="navbar-top-2" class="menu-primary-container">
                         <ul id="primary-menu" class="nav navbar-nav navbar-right">
                             <li id="menu-item-800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-800">
-                                <a title="Home" href="{{ path('index') }}">Home </a>
+                                <a title="Home" href="{{ path('get_index') }}">Home </a>
                             </li>
                         </ul>
                     </div>
@@ -39,14 +39,14 @@
                 <div class="col-md-10 col-md-offset-1 col-sm-12">
                     <div class="page-title">
                         {% if location is defined and location is not empty %}
-                            <h2>Location: {{ location }}</h2>
+                            <h2>{% trans %}Location: %location% }}{% endtrans %}</h2>
                         {% else %}
-                            <h2>Location: All</h2>
+                            <h2>{% trans %}Location: All{% endtrans %}</h2>
                         {% endif %}
                     </div>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="{{ path('index') }}">Home</a>
+                            <a href="{{ path('get_index') }}">{% trans %}Home{% endtrans %}</a>
                         </li>
                     </ol>
                 </div>
@@ -70,10 +70,30 @@
                                         </div>
                                         <div class="property-content">
                                                 <h3>
-                                                    <a href="{{ path('get_post_details') }}">{{ post.titleEn }}</a>
+                                                    <a href="{{ path('get_post_details') }}">
+                                                        {% if app.request.locale == 'ru'%}
+                                                            {{ post.titleRu }}
+                                                        {% elseif app.request.locale == 'pl' %}
+                                                            {{ post.titlePl }}
+                                                        {% elseif app.request.locale == 'fr' %}
+                                                            {{ post.titlePl }}
+                                                        {% else %}
+                                                            {{ post.titleEn }}
+                                                        {% endif %}
+                                                    </a>
                                                     <small><i class="fa fa-map-marker"></i> {{ post.location }}</small>
                                                 </h3>
-                                                <p style="overflow: hidden; text-overflow: ellipsis">{{ post.propertyDescriptionEn }}</p>
+                                                <p style="overflow: hidden; text-overflow: ellipsis">
+                                                    {% if app.request.locale == 'ru'%}
+                                                        {{ post.propertyDescriptionRu }}
+                                                    {% elseif app.request.locale == 'pl' %}
+                                                        {{ post.propertyDescriptionPl }}
+                                                    {% elseif app.request.locale == 'fr' %}
+                                                        {{ post.propertyDescriptionFr }}
+                                                    {% else %}
+                                                        {{ post.propertyDescriptionEn }}
+                                                    {% endif %}
+                                                </p>
                                             </div>
                                             <div class="property-attributes text-center">
                                                 <div class="col-xs-5">
@@ -83,7 +103,7 @@
                                                 </div>
                                             </div>
                                         <div class="property-buttons">
-                                            <a href="{{ path('get_post_details') }}" class="property-btn">Browse</a>
+                                            <a href="{{ path('get_post_details') }}" class="property-btn">{% trans %}Browse{% endtrans %}</a>
                                         </div>
                                     </div>
                                 </div>

@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SearchController extends AbstractController
 {
     /**
-     * @Route("/search_result", methods={"GET"}, name="search_result")
+     * @Route("/{_locale}/search_result", methods={"GET"}, name="get_search_result", requirements={"_locale"="%locales_requirements%"})
      */
     public function indexAction(Request $request, PostRepository $postRepository): Response
     {
