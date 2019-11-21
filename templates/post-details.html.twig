@@ -11,18 +11,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://www.ongoingthemes.com/homelist/">
-                        <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2018/04/Logo24.png" height="80" alt="Home">
+                    <a class="navbar-brand" href="{{ path('get_index') }}">
+                        <img src="/images/static/logo_220_60.png" height="80" alt="Home">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-top">
                     <div id="navbar-top-2" class="menu-primary-container">
                         <ul id="primary-menu" class="nav navbar-nav navbar-right">
                             <li id="menu-item-800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-800">
-                                <a title="Home" href="/">Home </a>
-                            </li>
-                            <li id="menu-item-800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-800">
-                                <a title="Contact" href=".footer">Contact</a>
+                                <a title="Home" href="{{ path('get_index') }}">{% trans %}Home{% endtrans %} </a>
                             </li>
                         </ul>
                     </div>
@@ -33,12 +30,26 @@
 
     <!-- HEADER -->
 
-    <div id="header" class="heading" style="background-image: url(http://www.ongoingthemes.com/homelist/wp-content/uploads/2017/07/slide1.jpg);">
+    <div id="header" class="heading back-img2">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 col-sm-12">
                     <div class="page-title">
-                        <h2 style="margin-top: 40px">The Knightsbridge Ap.</h2>
+                        <h2 style="margin-top: 40px">{% if app.request.locale == 'ru'%}
+                                {{ post.titleRu }}
+                            {% elseif app.request.locale == 'pl' %}
+                                {{ post.titlePl }}
+                            {% elseif app.request.locale == 'fr' %}
+                                {{ post.titleFr }}
+                            {% else %}
+                                {{ post.titleEn }}
+                            {% endif %}
+                        </h2>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="{{ path('get_index') }}">{% trans %}Home{% endtrans %}</a>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </div>
@@ -55,42 +66,48 @@
                         <div class="property-detail-actions">
                         </div>
                         <div class="property-title similar-properties">
-                            <h2>The Knightsbridge Ap.</h2>
+                            <h2>{% if app.request.locale == 'ru'%}
+                                    {{ post.titleRu }}
+                                {% elseif app.request.locale == 'pl' %}
+                                    {{ post.titlePl }}
+                                {% elseif app.request.locale == 'fr' %}
+                                    {{ post.titleFr }}
+                                {% else %}
+                                    {{ post.titleEn }}
+                                {% endif %}</h2>
                         </div>
                         <div class="property-pricing">
-                            <div>$ 120</div>
+                            <div>{{ post.price }} $</div>
                         </div>
                         <ul class="property-main-features">
                             <li class="main-detail-_location">
                                 <i class="fa fa-map-marker"></i>
-                                <span>Warsaw</span>
+                                <span>{{ post.location }}</span>
                             </li>
                             <li class="main-detail-_area">
                                 <i class="fa fa-retweet"></i>
-                                <span>180 square ft.</span>
+                                <span>{{ post.square }} m2</span>
                             </li>
                             <li class="main-detail-_price">
                                 <i class="fa fa-cc-visa"></i>
-                                <span>1000$</span>
+                                <span>{{ post.price }} $</span>
                             </li>
                         </ul>
                         <div class="property-gallery">
                             <div id="slider-property" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
-                                    <li data-target="#slider-property" data-slide-to="0" class="active">
-                                        <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img12.jpg" alt="">
-                                    </li>
-                                    <li data-target="#slider-property" data-slide-to="1" >
-                                        <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img15.jpg" alt="">
-                                    </li>
+                                    {% for postImage in post.postImages %}
+                                        <li data-target="#slider-property" data-slide-to="{{ loop.index0 }}">
+                                            <img src="/images/{{ postImage.filename }}" alt="">
+                                        </li>
+                                    {% endfor %}
                                 </ol>
                                 <div class="carousel-inner">
-                                    <div class="item active">
-                                        <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img12.jpg" alt="">
-                                    </div>
-                                    <div class="item ">
-                                        <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img15.jpg" alt="">
-                                    </div>
+                                    {% for postImage in post.postImages %}
+                                        <div class="item {% if loop.index0 == 0 %} active {% endif %}">
+                                            <img src="/images/{{ postImage.filename }}" alt="">
+                                        </div>
+                                    {% endfor %}
                                 </div>
                                 <a class="left carousel-control" href="#slider-property" data-slide="prev">
                                     <span class="fa fa-chevron-left"></span>
@@ -102,40 +119,88 @@
                         </div>
 
                         <div class="similar-properties">
-                            <h2>Property Overview</h2>
+                            <h2>{% trans %}Property Overview{% endtrans %}</h2>
                             <div class="property-overview">
                                 <ul>
                                     <li>
-                                        <span>Локализация</span>
-                                        <strong class="emphasize">Англия</strong>
+                                        <span>{% trans %}Location{% endtrans %}</span>
+                                        <strong class="emphasize">{{ post.location }}</strong>
                                     </li>
                                     <li>
-                                        <span>Цена</span>
-                                        <strong class="emphasize">1234$</strong>
+                                        <span>{% trans %}Price{% endtrans %}</span>
+                                        <strong class="emphasize">{{ post.price }} $</strong>
                                     </li>
                                     <li>
-                                        <span>Статус</span>
-                                        <strong>Доступно</strong>
+                                        <span>{% trans %}Status{% endtrans %}</span>
+                                        <strong>
+                                            {% if app.request.locale == 'ru'%}
+                                                {{ post.statusRu }}
+                                            {% elseif app.request.locale == 'pl' %}
+                                                {{ post.statusPl }}
+                                            {% elseif app.request.locale == 'fr' %}
+                                                {{ post.statusFr }}
+                                            {% else %}
+                                                {{ post.statusEn }}
+                                            {% endif %}
+                                        </strong>
                                     </li>
                                     <li>
-                                        <span>Площадь</span>
-                                        <strong>490 кв.м.</strong>
+                                        <span>{% trans %}Square{% endtrans %}</span>
+                                        <strong>{{ post.square}} m2</strong>
                                     </li>
                                     <li>
-                                        <span>Тип</span>
-                                        <strong>Дом</strong>
+                                        <span>{% trans %}Type{% endtrans %}</span>
+                                        <strong>
+                                            {% if app.request.locale == 'ru'%}
+                                                {{ post.propertyTypeRu }}
+                                            {% elseif app.request.locale == 'pl' %}
+                                                {{ post.propertyTypePl }}
+                                            {% elseif app.request.locale == 'fr' %}
+                                                {{ post.propertyTypeFr }}
+                                            {% else %}
+                                                {{ post.propertyTypeEn }}
+                                            {% endif %}
+                                        </strong>
                                     </li>
                                     <li>
-                                        <span>Название</span>
-                                        <strong>Швеция</strong>
+                                        <span>{% trans %}Name{% endtrans %}</span>
+                                        <strong>
+                                            {% if app.request.locale == 'ru'%}
+                                                {{ post.propertyNameRu }}
+                                            {% elseif app.request.locale == 'pl' %}
+                                                {{ post.propertyNamePl }}
+                                            {% elseif app.request.locale == 'fr' %}
+                                                {{ post.propertyNameFr }}
+                                            {% else %}
+                                                {{ post.propertyNameEn }}
+                                            {% endif %}
+                                        </strong>
                                     </li>
                                     <li>
-                                        <span>Контракт</span>
-                                        <strong>Продажа</strong>
+                                        <span>{% trans %}Contract{% endtrans %}</span>
+                                        <strong>{% if app.request.locale == 'ru'%}
+                                                {{ post.contractRu }}
+                                            {% elseif app.request.locale == 'pl' %}
+                                                {{ post.contractPl }}
+                                            {% elseif app.request.locale == 'fr' %}
+                                                {{ post.contractFr }}
+                                            {% else %}
+                                                {{ post.contractEn }}
+                                            {% endif %}</strong>
                                     </li>
                                     <li>
-                                        <span>Контактное лицо</span>
-                                        <strong>Хопкинс</strong>
+                                        <span>{% trans %}Contact person{% endtrans %}</span>
+                                        <strong>
+                                            {% if app.request.locale == 'ru'%}
+                                                {{ post.contactPersonRu }}
+                                            {% elseif app.request.locale == 'pl' %}
+                                                {{ post.contactPersonPl }}
+                                            {% elseif app.request.locale == 'fr' %}
+                                                {{ post.contactPersonFr }}
+                                            {% else %}
+                                                {{ post.contactPersonEn }}
+                                            {% endif %}
+                                        </strong>
                                     </li>
                                 </ul>
                             </div>
@@ -143,16 +208,22 @@
 
                         <div class="similar-properties">
                             <div class="property-description">
-                                <h2>Property Description</h2>
-                                <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
-                                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-                                <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                <h2>{% trans %}Property Description{% endtrans %}</h2>
+                                {% if app.request.locale == 'ru'%}
+                                    {{ post.propertyDescriptionRu }}
+                                {% elseif app.request.locale == 'pl' %}
+                                    {{ post.propertyDescriptionPl }}
+                                {% elseif app.request.locale == 'fr' %}
+                                    {{ post.propertyDescriptionFr }}
+                                {% else %}
+                                    {{ post.propertyDescriptionEn }}
+                                {% endif %}
                             </div>
                         </div>
 
                         <div class="similar-properties">
                             <div class="property-video">
-                                <h2>Video</h2>
+                                <h2>{% trans %}Video{% endtrans %}</h2>
                                 <div class="video-embed-wrapper">
                                     <p>
                                         <iframe width="1280" height="720" src="https://www.youtube.com/embed/wNLr7WsyW9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -165,72 +236,134 @@
 
                         <div class="similar-properties">
                             <div class="property-public-facilities">
-                                <h2>Public facilities</h2>
-                                <div class="property-public-facility-wrapper">
-                                    <div class="property-public-facility">
-                                        <div class="property-public-facility-title">
-                                            <span>Airport</span>
-                                        </div>
-                                        <div class="property-public-facility-info">
-                                            10 km
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-public-facility-wrapper">
-                                    <div class="property-public-facility">
-                                        <div class="property-public-facility-title">
-                                            <span>City Center</span>
-                                        </div>
-                                        <div class="property-public-facility-info">
-                                            2 min
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-public-facility-wrapper">
-                                    <div class="property-public-facility">
-                                        <div class="property-public-facility-title">
-                                            <span>Hospital</span>
-                                        </div>
-                                        <div class="property-public-facility-info">
-                                            5 min
+                                <h2>{% trans %}Public facilities{% endtrans %}</h2>
+                                {% if post.publicFacilitiesDistance1 is defined and post.publicFacilitiesDistance1 is not empty %}
+                                    <div class="property-public-facility-wrapper">
+                                        <div class="property-public-facility">
+                                            <div class="property-public-facility-title">
+                                                <span>
+                                                    {% if app.request.locale == 'ru'%}
+                                                        {{ post.publicFacilitiesDescription1Ru }}
+                                                    {% elseif app.request.locale == 'pl' %}
+                                                        {{ post.publicFacilitiesDescription1Pl }}
+                                                    {% elseif app.request.locale == 'fr' %}
+                                                        {{ post.publicFacilitiesDescription1Fr }}
+                                                    {% else %}
+                                                        {{ post.publicFacilitiesDescription1En }}
+                                                    {% endif %}
+                                                </span>
+                                            </div>
+                                            <div class="property-public-facility-info">
+                                                {{ post.publicFacilitiesDistance1 }}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="property-public-facility-wrapper">
-                                    <div class="property-public-facility">
-                                        <div class="property-public-facility-title">
-                                            <span>School</span>
-                                        </div>
-                                        <div class="property-public-facility-info">
-                                            2 km
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-public-facility-wrapper">
-                                    <div class="property-public-facility">
-                                        <div class="property-public-facility-title">
-                                            <span>Mc Donalds</span>
-                                        </div>
-                                        <div class="property-public-facility-info">
-                                            right here!
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-public-facility-wrapper">
-                                    <div class="property-public-facility">
-                                        <div class="property-public-facility-title">
-                                            <span>Metro station</span>
-                                        </div>
-                                        <div class="property-public-facility-info">
-                                            0.5 km
+                                {% endif %}
+                                {% if post.publicFacilitiesDistance2 is defined and post.publicFacilitiesDistance2 is not empty %}
+                                    <div class="property-public-facility-wrapper">
+                                        <div class="property-public-facility">
+                                            <div class="property-public-facility-title">
+                                                <span>{% if app.request.locale == 'ru'%}
+                                                        {{ post.publicFacilitiesDescription2Ru }}
+                                                    {% elseif app.request.locale == 'pl' %}
+                                                        {{ post.publicFacilitiesDescription2Pl }}
+                                                    {% elseif app.request.locale == 'fr' %}
+                                                        {{ post.publicFacilitiesDescription2Fr }}
+                                                    {% else %}
+                                                        {{ post.publicFacilitiesDescription2En }}
+                                                    {% endif %}</span>
+                                            </div>
+                                            <div class="property-public-facility-info">
+                                                {{ post.publicFacilitiesDistance2 }}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% endif %}
+                                {% if post.publicFacilitiesDistance3 is defined and post.publicFacilitiesDistance3 is not empty %}
+                                    <div class="property-public-facility-wrapper">
+                                        <div class="property-public-facility">
+                                            <div class="property-public-facility-title">
+                                                <span>{% if app.request.locale == 'ru'%}
+                                                        {{ post.publicFacilitiesDescription3Ru }}
+                                                    {% elseif app.request.locale == 'pl' %}
+                                                        {{ post.publicFacilitiesDescription3Pl }}
+                                                    {% elseif app.request.locale == 'fr' %}
+                                                        {{ post.publicFacilitiesDescription3Fr }}
+                                                    {% else %}
+                                                        {{ post.publicFacilitiesDescription3En }}
+                                                    {% endif %}</span>
+                                            </div>
+                                            <div class="property-public-facility-info">
+                                                {{ post.publicFacilitiesDistance3 }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if post.publicFacilitiesDistance4 is defined and post.publicFacilitiesDistance4 is not empty %}
+                                    <div class="property-public-facility-wrapper">
+                                        <div class="property-public-facility">
+                                            <div class="property-public-facility-title">
+                                                <span>{% if app.request.locale == 'ru'%}
+                                                        {{ post.publicFacilitiesDescription4Ru }}
+                                                    {% elseif app.request.locale == 'pl' %}
+                                                        {{ post.publicFacilitiesDescription4Pl }}
+                                                    {% elseif app.request.locale == 'fr' %}
+                                                        {{ post.publicFacilitiesDescription4Fr }}
+                                                    {% else %}
+                                                        {{ post.publicFacilitiesDescription4En }}
+                                                    {% endif %}</span>
+                                            </div>
+                                            <div class="property-public-facility-info">
+                                                {{ post.publicFacilitiesDistance4 }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if post.publicFacilitiesDistance5 is defined and post.publicFacilitiesDistance5 is not empty %}
+                                    <div class="property-public-facility-wrapper">
+                                        <div class="property-public-facility">
+                                            <div class="property-public-facility-title">
+                                                <span>{% if app.request.locale == 'ru'%}
+                                                        {{ post.publicFacilitiesDescription5Ru }}
+                                                    {% elseif app.request.locale == 'pl' %}
+                                                        {{ post.publicFacilitiesDescription5Pl }}
+                                                    {% elseif app.request.locale == 'fr' %}
+                                                        {{ post.publicFacilitiesDescription5Fr }}
+                                                    {% else %}
+                                                        {{ post.publicFacilitiesDescription5En }}
+                                                    {% endif %}</span>
+                                            </div>
+                                            <div class="property-public-facility-info">
+                                                {{ post.publicFacilitiesDistance5 }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if post.publicFacilitiesDistance6 is defined and post.publicFacilitiesDistance6 is not empty %}
+                                    <div class="property-public-facility-wrapper">
+                                        <div class="property-public-facility">
+                                            <div class="property-public-facility-title">
+                                                <span>{% if app.request.locale == 'ru'%}
+                                                        {{ post.publicFacilitiesDescription6Ru }}
+                                                    {% elseif app.request.locale == 'pl' %}
+                                                        {{ post.publicFacilitiesDescription6Pl }}
+                                                    {% elseif app.request.locale == 'fr' %}
+                                                        {{ post.publicFacilitiesDescription6Fr }}
+                                                    {% else %}
+                                                        {{ post.publicFacilitiesDescription6En }}
+                                                    {% endif %}</span>
+                                            </div>
+                                            <div class="property-public-facility-info">
+                                                {{ post.publicFacilitiesDistance6 }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
 
                         <!-- MAP -->
-
+<!--
                         <div class="similar-properties">
                             <div class="property-map-position">
                                 <h2>Location</h2>
@@ -242,137 +375,66 @@
                                 </div>
                             </div>
                         </div>
-
+-->
                         <!-- SIMILAR PROPERTIES -->
 
                         <div class="similar-properties">
-                            <h2>Similar properties</h2>
+                            <h2>{% trans %}Similar properties{% endtrans %}</h2>
                             <div class="type-box item-per-row-3">
                                 <div class="row">
-                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <div class="property-container">
-                                            <div class="property-image ">
-                                                <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img05.jpg" class="property-box-thumbnail wp-post-image" alt="" />
-                                                <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/" class="property-box-image-inner "></a>
-                                            </div>
-                                            <div class="property-content">
-                                                <h3>
-                                                    <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/">
-                                                        East Thompson Street
-                                                    </a>
-                                                    <small><i class="fa fa-map-marker"></i> New York, NY 10013</small>
-                                                </h3>
-                                                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes...</p>
-                                            </div>
-                                            <div class="property-attributes text-center">
-                                                <div class="col-xs-4">
-                                                    <h4>
-                                                        <i class="fa fa-cc-visa"></i>
-                                                        <p title="Price">1500$</p>
-                                                    </h4>
+                                    {% for post in postsSimilar %}
+                                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <div class="property-container">
+                                                <div class="property-image" style="width: 263px; height: 175px">
+                                                    <img width="640" height="425" src="/images/{{ post.imageAvatar.filename }}" class="property-box-thumbnail wp-post-image" alt="" />
+                                                    <a href="{{ path('get_post_details', {id: post.id}) }}" class="property-box-image-inner "></a>
+                                                </div>
+                                                <div class="property-content">
+                                                    <h3>
+                                                        <a href="{{ path('get_post_details', {id: post.id}) }}">
+                                                            {% if app.request.locale == 'ru'%}
+                                                                {{ post.titleRu }}
+                                                            {% elseif app.request.locale == 'pl' %}
+                                                                {{ post.titlePl }}
+                                                            {% elseif app.request.locale == 'fr' %}
+                                                                {{ post.titleFr }}
+                                                            {% else %}
+                                                                {{ post.titleEn }}
+                                                            {% endif %}
+                                                        </a>
+                                                        <small><i class="fa fa-map-marker"></i> {{ post.location }}</small>
+                                                    </h3>
+                                                    <p class="text-cut">
+                                                        {% if app.request.locale == 'ru'%}
+                                                            {{ post.propertyDescriptionRu }}
+                                                        {% elseif app.request.locale == 'pl' %}
+                                                            {{ post.propertyDescriptionPl }}
+                                                        {% elseif app.request.locale == 'fr' %}
+                                                            {{ post.propertyDescriptionFr }}
+                                                        {% else %}
+                                                            {{ post.propertyDescriptionEn }}
+                                                        {% endif %}
+                                                    </p>
+                                                </div>
+                                                <div class="property-attributes">
+                                                    <div class="col-xs-4" style="width: 200px; padding-left: 25px; float: left">
+                                                        <h4>
+                                                            {% if post.price is not empty %}
+                                                                <p title="Price"><i class="fa fa-cc-visa"></i> {{ post.price }} $</p>
+                                                            {% endif %}
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="property-buttons">
+                                                    <a href="{{ path('get_post_details', {id: post.id}) }}" class="property-btn">{% trans %}Browse{% endtrans %}</a>
                                                 </div>
                                             </div>
-                                            <div class="property-buttons">
-                                                <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/" class="property-btn">
-                                                    Browse
-                                                </a>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <div class="property-container">
-                                            <div class="property-image ">
-                                                <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img07.jpg" class="property-box-thumbnail wp-post-image" alt="" />
-                                                <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/" class="property-box-image-inner "></a>
-                                            </div>
-                                            <div class="property-content">
-                                                <h3>
-                                                    <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/">
-                                                        East Thompson Street
-                                                    </a>
-                                                    <small><i class="fa fa-map-marker"></i> New York, NY 10013</small>
-                                                </h3>
-                                                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes...</p>
-                                            </div>
-                                            <div class="property-attributes text-center">
-                                                <div class="col-xs-4">
-                                                    <h4>
-                                                        <i class="fa fa-cc-visa"></i>
-                                                        <p title="Price">1000$</p>
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                            <div class="property-buttons">
-                                                <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/" class="property-btn">
-                                                    Browse
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <div class="property-container">
-                                            <div class="property-image ">
-                                                <img width="640" height="425" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/img04.jpg" class="property-box-thumbnail wp-post-image" alt="" />
-                                                <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/" class="property-box-image-inner "></a>
-                                            </div>
-                                            <div class="property-content">
-                                                <h3>
-                                                    <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/">
-                                                        East Thompson Street
-                                                    </a>
-                                                    <small><i class="fa fa-map-marker"></i> New York, NY 10013</small>
-                                                </h3>
-                                                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes...</p>
-                                            </div>
-                                            <div class="property-attributes text-center">
-                                                <div class="col-xs-4">
-                                                    <h4>
-                                                        <i class="fa fa-cc-visa"></i>
-                                                        <p title="Price">1000$</p>
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                            <div class="property-buttons">
-                                                <a href="http://www.ongoingthemes.com/homelist/properties/40-thompson-street/" class="property-btn">
-                                                    Browse
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
                     </article>
-                </div>
-
-                <!-- SIDEBAR WIDGET -->
-
-                <div class="sidebar col-sm-4 col-md-3">
-                    <div id="agents_assigned_widget-2" class="widget widget_agents_assigned_widget">
-                        <div class="type-small item-per-row-1">
-                            <div class="agents-container">
-                                <div class="profile-box">
-                                    <div class="profile-header">
-                                        <div class="profile-img">
-                                            <img width="300" height="300" src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2019/03/person-3.jpg" class="attachment-large size-large wp-post-image" alt="" />		        </div>
-                                        <h5 class="profile-title">Peter Ruck</h5>
-                                    </div>
-                                    <ul class="profile-contact">
-                                        <li>
-                                            <i class="fa fa-envelope"></i>
-                                            <a href="mailto:info@example.com">info@example.com</a>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-phone"></i> +123-456-789
-                                        </li>
-                                        <li>
-                                            Hey Yoy, this is our best super pooper professional staff manager
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -14,6 +14,9 @@
                     {% if contactInformation and contactInformation.phonenumber2 %}
                         <li class="disabled"><a href=""><i class="fa fa-phone"></i> {{ contactInformation.phonenumber2 }}</a></li>
                     {% endif %}
+                    {% if contactInformation and contactInformation.phonenumber3 %}
+                        <li class="disabled"><a href=""><i class="fa fa-phone"></i> {{ contactInformation.phonenumber3 }}</a></li>
+                    {% endif %}
                 </ul>
                 <ul class="topbar-nav topbar-right hidden-xs">
                     {% if contactInformation and contactInformation.facebook %}
@@ -34,16 +37,16 @@
 
                     <li>
                         <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <button class="dropd btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color: white">
                                 {{ app.request.locale|upper }}
                                 <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <ul class="dropdown-menu dropd1" aria-labelledby="dropdownMenu1">
                                 {% for locale in activated_locales %}
                                     {% if locale != app.request.locale %}
                                         <li>
                                             <a class="dropdown-item"
-                                               href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'_locale': locale})) }}">
+                                               href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge(app.request.attributes.get('_route_params')|merge({'_locale': locale}))) }}" style="color: black;">
                                                 {{ locale|upper }}
                                             </a>
                                         </li>

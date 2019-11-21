@@ -1,0 +1,34 @@
+.sale {
+    padding: 10px 15px;
+    background-color: #d82460;
+    color: white;
+}
+
+.dropd {
+    padding: 0;
+    margin: 5px 0 0 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.dropd1 {
+    min-width: 15px;
+    background-color: rgba(216, 36, 96, 0.85);
+    border-radius: 0;
+}
+
+.back-img {
+    background-image: url("../images/static/slide3.jpg");
+}
+
+.back-img2 {
+    background-image: url("../images/static/slide1.jpg");
+}
+
+.text-cut {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

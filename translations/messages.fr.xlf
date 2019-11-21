@@ -7,11 +7,159 @@
     <body>
       <trans-unit id="ScJmuqq" resname="Search">
         <source>Search</source>
-        <target>__Search</target>
+        <target>Recherche</target>
       </trans-unit>
       <trans-unit id="FbYZdLJ" resname="Location">
         <source>Location</source>
-        <target>__Location</target>
+        <target>L'emplacement</target>
+      </trans-unit>
+      <trans-unit id="R6rzG4P" resname="Contact us">
+        <source>Contact us</source>
+        <target>Nous contacter</target>
+      </trans-unit>
+      <trans-unit id="PyUAuC2" resname="Sale">
+        <source>Sale</source>
+        <target>Vente</target>
+      </trans-unit>
+      <trans-unit id="DiOwz_v" resname="All locations">
+        <source>All locations</source>
+        <target>Tous les lieux</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit id="SMmnwrQ" resname="All property types">
+        <source>All property types</source>
+        <target>Tous les types de propriété</target>
+      </trans-unit>
+      <trans-unit id="iuHVC6F" resname="Price from">
+        <source>Price from</source>
+        <target>Prix à partir de</target>
+      </trans-unit>
+      <trans-unit id="8l4pR3L" resname="Price to">
+        <source>Price to</source>
+        <target>Prix à</target>
+      </trans-unit>
+      <trans-unit id="nM5j.J3" resname="Real Estate Locations">
+        <source>Real Estate Locations</source>
+        <target>Emplacements immobiliers</target>
+      </trans-unit>
+      <trans-unit id="4bIFQNt" resname="Find a house for sale on a location basis.">
+        <source>Find a house for sale on a location basis.</source>
+        <target>Trouver une maison à vendre sur une base d'emplacement</target>
+      </trans-unit>
+      <trans-unit id="hRpq0aK" resname="Islands and Soils">
+        <source>Islands and Soils</source>
+        <target>Îles et terrains</target>
+      </trans-unit>
+      <trans-unit id="9voHY_f" resname="Houses and Apartments">
+        <source>Houses and Apartments</source>
+        <target>Maisons et appartements</target>
+      </trans-unit>
+      <trans-unit id="hT4vH7l" resname="Investments">
+        <source>Investments</source>
+        <target>Investissements</target>
+      </trans-unit>
+      <trans-unit id="hYrfOZk" resname="What Our Customers Say">
+        <source>What Our Customers Say</source>
+        <target>Ce que nos clients disent</target>
+      </trans-unit>
+      <trans-unit id="wGDNkLT" resname="The following quotes are typical for the customer appreciation ___ receives">
+        <source>The following quotes are typical for the customer appreciation ALAVIDA receives</source>
+        <target>Les citations suivantes sont typiques pour l'appréciation du client ALAVIDA reçoit</target>
+      </trans-unit>
+      <trans-unit id="_qFa15n" resname="Our Representatives">
+        <source>Our Representatives</source>
+        <target>Nos représentants</target>
+      </trans-unit>
+      <trans-unit id="8jaQWVO" resname="Our team is ready to help you reach your real estate goal">
+        <source>Our team is ready to help you reach your real estate goal</source>
+        <target>Notre équipe est prête à vous aider à atteindre votre objectif immobilier</target>
+      </trans-unit>
+      <trans-unit id="h8oWbJJ" resname="Location: %location% }}">
+        <source>Location: %location% }}</source>
+        <target>L'emplacement: %location% }}</target>
+      </trans-unit>
+      <trans-unit id="BvZu_So" resname="Location: All">
+        <source>Location: All</source>
+        <target>L'emplacement: Tous</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>L'accueil</target>
+      </trans-unit>
+      <trans-unit id="MieqlmY" resname="Browse">
+        <source>Browse</source>
+        <target>Parcourir</target>
+      </trans-unit>
+      <trans-unit id="DKt4akU" resname="The Caribbean">
+        <source>The Caribbean</source>
+        <target>Les Caraïbes</target>
+      </trans-unit>
+      <trans-unit id="w2aPWBK" resname="Panama">
+        <source>Panama</source>
+        <target>Le Panama</target>
+      </trans-unit>
+      <trans-unit id="jzu1Hra" resname="Corsica">
+        <source>Corsica</source>
+        <target>La Corse</target>
+      </trans-unit>
+      <trans-unit id="jvQeb0s" resname="Spain">
+        <source>Spain</source>
+        <target>L’Espagne</target>
+      </trans-unit>
+      <trans-unit id="RYVWiAE" resname="Russian Federation">
+        <source>Russian Federation</source>
+        <target>La Russie</target>
+      </trans-unit>
+      <trans-unit id="YPohCjb" resname="Republic of Belarus">
+        <source>Republic of Belarus</source>
+        <target>Bélarus</target>
+      </trans-unit>
+      <trans-unit id="dH.ul6Z" resname="Property Overview">
+        <source>Property Overview</source>
+        <target>Aperçu de la propriété</target>
+      </trans-unit>
+      <trans-unit id="k8kchR5" resname="Price">
+        <source>Price</source>
+        <target>Prix</target>
+      </trans-unit>
+      <trans-unit id="kg5BPH1" resname="Status">
+        <source>Status</source>
+        <target>Statut</target>
+      </trans-unit>
+      <trans-unit id="wRCSvAh" resname="Square">
+        <source>Square</source>
+        <target>Surface</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="pvWw5ZL" resname="Contract">
+        <source>Contract</source>
+        <target>Contrat</target>
+      </trans-unit>
+      <trans-unit id="dEwB3vQ" resname="Contact person">
+        <source>Contact person</source>
+        <target>Personne de contact</target>
+      </trans-unit>
+      <trans-unit id="5PmaZWo" resname="Property Description">
+        <source>Property Description</source>
+        <target>Description de la propriété</target>
+      </trans-unit>
+      <trans-unit id="1TS_gp4" resname="Video">
+        <source>Video</source>
+        <target>Vidéo</target>
+      </trans-unit>
+      <trans-unit id="O1.O50I" resname="Public facilities">
+        <source>Public facilities</source>
+        <target>Les aménagements publics</target>
+      </trans-unit>
+      <trans-unit id="Ukm6TKO" resname="Similar properties">
+        <source>Similar properties</source>
+        <target>Propriétés similaires</target>
       </trans-unit>
     </body>
   </file>

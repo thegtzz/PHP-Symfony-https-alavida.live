@@ -36,7 +36,7 @@ final class StaffAdmin extends AbstractAdmin
     {
         $datagridMapper
             ->add('staffAvatar')
-            ->add('staffNameRU')
+            ->add('staffNameRu')
             ->add('staffNameEn')
             ->add('staffNamePl')
             ->add('staffNameFr')

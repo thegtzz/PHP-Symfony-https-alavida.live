@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\DBAL\Connection;
 
 class PostRepository extends ServiceEntityRepository
 {
@@ -44,6 +45,24 @@ class PostRepository extends ServiceEntityRepository
             $qb
                 ->andWhere('p.price <= :toPrice')
                 ->setParameter('fromPrice', $toPrice);
+        }
+
+        return $qb->getQuery()->getResult();
+    }
+
+    public function findByCategories(array $categories, int $limit = null)
+    {
+        $qb = $this->createQueryBuilder('p');
+
+        $qb
+            ->leftJoin('p.category', 'c')
+            ->where($qb->expr()->in('c.name', ':categories'))
+            ->setParameter('categories', $categories, Connection::PARAM_STR_ARRAY)
+            ->orderBy('p.id', 'DESC')
+            ->groupBy('p.id');
+
+        if ($limit) {
+            $qb->setMaxResults($limit);
         }
 
         return $qb->getQuery()->getResult();

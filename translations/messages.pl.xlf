@@ -1,165 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="ru" datatype="plaintext" original="file.ext">
+  <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="ScJmuqq" resname="Search">
-        <source>Search</source>
-        <target>Поиск</target>
-      </trans-unit>
-      <trans-unit id="FbYZdLJ" resname="Location">
-        <source>Location</source>
-        <target>Локация</target>
-      </trans-unit>
       <trans-unit id="R6rzG4P" resname="Contact us">
         <source>Contact us</source>
-        <target>Контакты</target>
+        <target>Skontaktuj się z nami</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Szukaj</target>
       </trans-unit>
       <trans-unit id="PyUAuC2" resname="Sale">
         <source>Sale</source>
-        <target>Продажа</target>
+        <target>Sprzedaż</target>
+      </trans-unit>
+      <trans-unit id="FbYZdLJ" resname="Location">
+        <source>Location</source>
+        <target>Lokalizacja</target>
       </trans-unit>
       <trans-unit id="DiOwz_v" resname="All locations">
         <source>All locations</source>
-        <target>Все локации</target>
+        <target>Wszystkie lokalizacje</target>
       </trans-unit>
       <trans-unit id="uq3fcPt" resname="Type">
         <source>Type</source>
-        <target>Тип</target>
+        <target>Typ</target>
       </trans-unit>
       <trans-unit id="SMmnwrQ" resname="All property types">
         <source>All property types</source>
-        <target>Все типы</target>
+        <target>Wszystkie typy nieruchomości</target>
       </trans-unit>
       <trans-unit id="iuHVC6F" resname="Price from">
         <source>Price from</source>
-        <target>Цена от</target>
+        <target>Cena od</target>
       </trans-unit>
       <trans-unit id="8l4pR3L" resname="Price to">
         <source>Price to</source>
-        <target>Цена до</target>
+        <target>Cena do</target>
       </trans-unit>
       <trans-unit id="nM5j.J3" resname="Real Estate Locations">
         <source>Real Estate Locations</source>
-        <target>Местоположение недвижимости</target>
+        <target>Lokalizacja nieruchomości</target>
       </trans-unit>
       <trans-unit id="4bIFQNt" resname="Find a house for sale on a location basis.">
         <source>Find a house for sale on a location basis.</source>
-        <target>Найдите недвижимость на основе местоположения.</target>
+        <target>Znajdź dom na sprzedaż na podstawie lokalizacji</target>
       </trans-unit>
       <trans-unit id="hRpq0aK" resname="Islands and Soils">
         <source>Islands and Soils</source>
-        <target>Острова и Грунты</target>
+        <target>Wyspy i tereny</target>
       </trans-unit>
       <trans-unit id="9voHY_f" resname="Houses and Apartments">
         <source>Houses and Apartments</source>
-        <target>Дома и Апартаменты</target>
+        <target>Domy i mieszkania</target>
       </trans-unit>
       <trans-unit id="hT4vH7l" resname="Investments">
         <source>Investments</source>
-        <target>Инвестиции</target>
+        <target>Inwestycje</target>
       </trans-unit>
       <trans-unit id="hYrfOZk" resname="What Our Customers Say">
         <source>What Our Customers Say</source>
-        <target>Что Говорят Наши Клиенты</target>
+        <target>Co mówią nasi klienci</target>
+      </trans-unit>
+      <trans-unit id="wGDNkLT" resname="The following quotes are typical for the customer appreciation ___ receives">
+        <source>The following quotes are typical for the customer appreciation ___ receives</source>
+        <target>Poniższe oferty są typowe dla uznania klienta ALAVIDA otrzymuje</target>
       </trans-unit>
       <trans-unit id="_qFa15n" resname="Our Representatives">
         <source>Our Representatives</source>
-        <target>Наши Представители</target>
+        <target>Nasi przedstawiciele</target>
       </trans-unit>
       <trans-unit id="8jaQWVO" resname="Our team is ready to help you reach your real estate goal">
         <source>Our team is ready to help you reach your real estate goal</source>
-        <target>Наша команда готова помочь Вам достичь Вашей цели в сфере недвижимости</target>
+        <target>Nasz zespół jest gotowy pomóc Ci osiągnąć Twój cel</target>
       </trans-unit>
       <trans-unit id="h8oWbJJ" resname="Location: %location% }}">
         <source>Location: %location% }}</source>
-        <target>Локация: %location% }}</target>
+        <target>Lokalizacja: %location% }}</target>
       </trans-unit>
       <trans-unit id="BvZu_So" resname="Location: All">
         <source>Location: All</source>
-        <target>Локация: Все</target>
+        <target>Lokalizacja: Wszystkie</target>
       </trans-unit>
       <trans-unit id="OnhpU4i" resname="Home">
         <source>Home</source>
-        <target>Вернуться на главную</target>
+        <target>Start</target>
       </trans-unit>
       <trans-unit id="MieqlmY" resname="Browse">
         <source>Browse</source>
-        <target>Узнать больше</target>
+        <target>Więcej</target>
       </trans-unit>
       <trans-unit id="DKt4akU" resname="The Caribbean">
         <source>The Caribbean</source>
-        <target>Карибские острова</target>
+        <target>Wyspy Karaibskie</target>
       </trans-unit>
       <trans-unit id="w2aPWBK" resname="Panama">
         <source>Panama</source>
-        <target>Панама</target>
+        <target>Panama</target>
       </trans-unit>
       <trans-unit id="jzu1Hra" resname="Corsica">
         <source>Corsica</source>
-        <target>Корсика</target>
+        <target>Korsyka</target>
       </trans-unit>
       <trans-unit id="jvQeb0s" resname="Spain">
         <source>Spain</source>
-        <target>Испания</target>
+        <target>Hiszpania</target>
       </trans-unit>
       <trans-unit id="RYVWiAE" resname="Russian Federation">
         <source>Russian Federation</source>
-        <target>Россия</target>
+        <target>Rosja</target>
       </trans-unit>
       <trans-unit id="YPohCjb" resname="Republic of Belarus">
         <source>Republic of Belarus</source>
-        <target>Беларусь</target>
+        <target>Białoruś</target>
       </trans-unit>
       <trans-unit id="dH.ul6Z" resname="Property Overview">
         <source>Property Overview</source>
-        <target>Детали недвижимости</target>
+        <target>Przegląd nieruchomości</target>
       </trans-unit>
       <trans-unit id="k8kchR5" resname="Price">
         <source>Price</source>
-        <target>Цена</target>
+        <target>Cena</target>
       </trans-unit>
       <trans-unit id="kg5BPH1" resname="Status">
         <source>Status</source>
-        <target>Статус</target>
+        <target>Status</target>
       </trans-unit>
       <trans-unit id="wRCSvAh" resname="Square">
         <source>Square</source>
-        <target>Площадь</target>
+        <target>Powierzchnia</target>
       </trans-unit>
       <trans-unit id="3NHVIj9" resname="Name">
         <source>Name</source>
-        <target>Название</target>
+        <target>Nazwa</target>
       </trans-unit>
       <trans-unit id="pvWw5ZL" resname="Contract">
         <source>Contract</source>
-        <target>Контракт</target>
+        <target>Umowa</target>
       </trans-unit>
       <trans-unit id="dEwB3vQ" resname="Contact person">
         <source>Contact person</source>
-        <target>Контактное лицо</target>
+        <target>Osoba do kontaktu</target>
       </trans-unit>
       <trans-unit id="5PmaZWo" resname="Property Description">
         <source>Property Description</source>
-        <target>Описание недвижимости</target>
+        <target>Opis nieruchomości</target>
       </trans-unit>
       <trans-unit id="1TS_gp4" resname="Video">
         <source>Video</source>
-        <target>Видео</target>
+        <target>Wideo</target>
       </trans-unit>
       <trans-unit id="O1.O50I" resname="Public facilities">
         <source>Public facilities</source>
-        <target>Что находится рядом</target>
+        <target>Obiekty publiczne</target>
       </trans-unit>
       <trans-unit id="Ukm6TKO" resname="Similar properties">
         <source>Similar properties</source>
-        <target>Схожие предложения</target>
-      </trans-unit>
-      <trans-unit id="6NfLQ.o" resname="The following quotes are typical for the customer appreciation ALAVIDA receives">
-        <source>The following quotes are typical for the customer appreciation ALAVIDA receives</source>
-        <target>Данные цитаты - это типичная оценка наших клиентов</target>
+        <target>Podobne oferty</target>
       </trans-unit>
     </body>
   </file>

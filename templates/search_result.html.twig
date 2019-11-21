@@ -15,15 +15,15 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                    <a class="navbar-brand" href="http://www.ongoingthemes.com/homelist/">
-                        <img src="http://www.ongoingthemes.com/homelist/wp-content/uploads/2018/04/Logo24.png" height="80" alt="Home">
+                    <a class="navbar-brand" href="{{ path('get_index') }}">
+                        <img src="/images/static/logo_220_60.png" height="80" alt="Home">
                     </a>
 				</div>
                 <div class="collapse navbar-collapse" id="navbar-top">
                     <div id="navbar-top-2" class="menu-primary-container">
                         <ul id="primary-menu" class="nav navbar-nav navbar-right">
                             <li id="menu-item-800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-800">
-                                <a title="Home" href="{{ path('get_index') }}">Home </a>
+                                <a title="Home" href="{{ path('get_index') }}">{% trans %}Home{% endtrans %} </a>
                             </li>
                         </ul>
                     </div>
@@ -33,13 +33,13 @@
 	</div>
 
     <!-- HEADER -->
-    <div id="header" class="heading" style="background-image: url(http://www.ongoingthemes.com/homelist/wp-content/uploads/2017/07/slide1.jpg);">
+    <div id="header" class="heading back-img">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 col-sm-12">
                     <div class="page-title">
                         {% if location is defined and location is not empty %}
-                            <h2>{% trans %}Location: %location% }}{% endtrans %}</h2>
+                            <h2>{% trans %}Location: %location% {% endtrans %}</h2>
                         {% else %}
                             <h2>{% trans %}Location: All{% endtrans %}</h2>
                         {% endif %}
@@ -64,13 +64,13 @@
                             {% for post in posts %}
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="property-container">
-                                        <div class="property-image ">
+                                        <div class="property-image" style="width: 263px; height: 175px">
                                             <img width="640" height="425" src="/images/{{ post.imageAvatar.filename }}" class="property-box-thumbnail wp-post-image" alt="" />
-                                            <a href="{{ path('get_post_details') }}" class="property-box-image-inner "></a>
+                                            <a href="{{ path('get_post_details', {id: post.id}) }}" class="property-box-image-inner "></a>
                                         </div>
                                         <div class="property-content">
                                                 <h3>
-                                                    <a href="{{ path('get_post_details') }}">
+                                                    <a href="{{ path('get_post_details', {id: post.id}) }}">
                                                         {% if app.request.locale == 'ru'%}
                                                             {{ post.titleRu }}
                                                         {% elseif app.request.locale == 'pl' %}
@@ -83,7 +83,7 @@
                                                     </a>
                                                     <small><i class="fa fa-map-marker"></i> {{ post.location }}</small>
                                                 </h3>
-                                                <p style="overflow: hidden; text-overflow: ellipsis">
+                                                <p class="text-cut">
                                                     {% if app.request.locale == 'ru'%}
                                                         {{ post.propertyDescriptionRu }}
                                                     {% elseif app.request.locale == 'pl' %}
@@ -95,15 +95,17 @@
                                                     {% endif %}
                                                 </p>
                                             </div>
-                                            <div class="property-attributes text-center">
-                                                <div class="col-xs-5">
-                                                    <h3>
-                                                        <small><i class="fa fa-money"></i> {{ post.price }} $</small>
-                                                    </h3>
+                                            <div class="property-attributes">
+                                                <div class="col-xs-4" style="width: 200px; padding-left: 25px; float: left">
+                                                    <h4>
+                                                        {% if post.price is not empty %}
+                                                            <p title="Price"><i class="fa fa-cc-visa"></i> {{ post.price }} $</p>
+                                                        {% endif %}
+                                                    </h4>
                                                 </div>
                                             </div>
                                         <div class="property-buttons">
-                                            <a href="{{ path('get_post_details') }}" class="property-btn">{% trans %}Browse{% endtrans %}</a>
+                                            <a href="{{ path('get_post_details', {id: post.id}) }}" class="property-btn">{% trans %}Browse{% endtrans %}</a>
                                         </div>
                                     </div>
                                 </div>

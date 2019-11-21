@@ -49,66 +49,10 @@ class Post
     private $titleFr;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewLocationRu", type="text", nullable=true)
-     */
-    private $overviewLocationRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewLocationEn", type="text", nullable=true)
-     */
-    private $overviewLocationEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewLocationPl", type="text", nullable=true)
-     */
-    private $overviewLocationPl;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewLocationFr", type="text", nullable=true)
-     */
-    private $overviewLocationFr;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Location", inversedBy="posts")
      * @ORM\JoinColumn(nullable=false)
      */
     private $location;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewStatusRu", type="text", nullable=true)
-     */
-    private $overviewStatusRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewStatusEn", type="text", nullable=true)
-     */
-    private $overviewStatusEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewStatusPl", type="text", nullable=true)
-     */
-    private $overviewStatusPl;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewStatusFr", type="text", nullable=true)
-     */
-    private $overviewStatusFr;
 
     /**
      * @var string
@@ -141,34 +85,6 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="overviewTypeRu", type="text", nullable=true)
-     */
-    private $overviewTypeRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewTypeEn", type="text", nullable=true)
-     */
-    private $overviewTypeEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewTypePl", type="text", nullable=true)
-     */
-    private $overviewTypePl;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewTypeFr", type="text", nullable=true)
-     */
-    private $overviewTypeFr;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="propertyTypeRu", type="text", nullable=true)
      */
     private $propertyTypeRu;
@@ -193,34 +109,6 @@ class Post
      * @ORM\Column(name="propertyTypeFr", type="text", nullable=true)
      */
     private $propertyTypeFr;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewContractRu", type="text", nullable=true)
-     */
-    private $overviewContractRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewContractEn", type="text", nullable=true)
-     */
-    private $overviewContractEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewContractPl", type="text", nullable=true)
-     */
-    private $overviewContractPl;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewContractFr", type="text", nullable=true)
-     */
-    private $overviewContractFr;
 
     /**
      * @var string
@@ -251,34 +139,6 @@ class Post
     private $contractFr;
 
     /**
-    * @var string
-    *
-    * @ORM\Column(name="overviewPriceRu", type="text", nullable=true)
-    */
-    private $overviewPriceRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewPriceEn", type="text", nullable=true)
-     */
-    private $overviewPriceEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewPricePl", type="text", nullable=true)
-     */
-    private $overviewPricePl;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewPriceFr", type="text", nullable=true)
-     */
-    private $overviewPriceFr;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="price", type="float", nullable=true)
@@ -288,65 +148,9 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="overviewSquareRu", type="text", nullable=true)
-     */
-    private $overviewSquareRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewSquareEn", type="text", nullable=true)
-     */
-    private $overviewSquareEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewSquarePl", type="text", nullable=true)
-     */
-    private $overviewSquarePl;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewSquareFr", type="text", nullable=true)
-     */
-    private $overviewSquareFr;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="square", type="float", nullable=true)
      */
     private $square;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewNameRu", type="text", nullable=true)
-     */
-    private $overviewNameRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewNameEn", type="text", nullable=true)
-     */
-    private $overviewNameEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewNamePl", type="text", nullable=true)
-     */
-    private $overviewNamePl;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewNameFr", type="text", nullable=true)
-     */
-    private $overviewNameFr;
 
     /**
      * @var string
@@ -375,34 +179,6 @@ class Post
      * @ORM\Column(name="propertyNameFr", type="text", nullable=true)
      */
     private $propertyNameFr;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewPersonRu", type="text", nullable=true)
-     */
-    private $overviewPersonRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewPersonEn", type="text", nullable=true)
-     */
-    private $overviewPersonEn;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewPersonPl", type="text", nullable=true)
-     */
-    private $overviewPersonPl;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="overviewPersonFr", type="text", nullable=true)
-     */
-    private $overviewPersonFr;
 
     /**
      * @var string
@@ -769,54 +545,6 @@ class Post
         return $this;
     }
 
-    public function getOverViewLocationRu(): ?string
-    {
-        return $this->overviewLocationRu;
-    }
-
-    public function setOverViewLocationRu(?string $overViewlocationRu): self
-    {
-        $this->overviewLocationRu = $overViewlocationRu;
-
-        return $this;
-    }
-
-    public function getOverViewLocationEn(): ?string
-    {
-        return $this->overviewLocationEn;
-    }
-
-    public function setOverViewLocationEn(?string $overViewlocationEn): self
-    {
-        $this->overviewLocationEn = $overViewlocationEn;
-
-        return $this;
-    }
-
-    public function getOverViewLocationPl(): ?string
-    {
-        return $this->overviewLocationPl;
-    }
-
-    public function setOverViewLocationPl(?string $overViewlocationPl): self
-    {
-        $this->overviewLocationPl = $overViewlocationPl;
-
-        return $this;
-    }
-
-    public function getOverViewLocationFr(): ?string
-    {
-        return $this->overviewLocationFr;
-    }
-
-    public function setOverViewLocationFr(?string $overViewlocationFr): self
-    {
-        $this->overviewLocationFr = $overViewlocationFr;
-
-        return $this;
-    }
-
     public function getLocation(): ?Location
     {
         return $this->location;
@@ -827,47 +555,6 @@ class Post
         $this->location = $location;
 
         return $this;
-    }
-
-    public function getOverviewStatusRu(): ?string
-    {
-        return $this->overviewStatusRu;
-    }
-
-    public function setOverviewStatusRu(?string $overviewStatusRu): self
-    {
-        $this->overviewStatusRu = $overviewStatusRu;
-
-        return $this;
-    }
-
-    public function getOverviewStatusEn(): ?string
-    {
-        return $this->overviewStatusEn;
-    }
-
-    public function setOverviewStatusEn(?string $overviewStatusEn): self
-    {
-        $this->overviewStatusEn = $overviewStatusEn;
-
-        return $this;
-    }
-
-    public function getOverviewStatusPl(): ?string
-    {
-        return $this->overviewStatusPl;
-    }
-
-    public function setOverviewStatusPl(?string $overviewStatusPl): self
-    {
-        $this->overviewStatusPl = $overviewStatusPl;
-
-        return $this;
-    }
-
-    public function getOverviewStatusFr(): ?string
-    {
-        return $this->overviewStatusFr;
     }
 
     public function setOverviewStatusFr(?string $overviewStatusFr): self
@@ -925,54 +612,6 @@ class Post
         return $this;
     }
 
-    public function getOverviewTypeRu(): ?string
-    {
-        return $this->overviewTypeRu;
-    }
-
-    public function setOverviewTypeRu(?string $overviewTypeRu): self
-    {
-        $this->overviewTypeRu = $overviewTypeRu;
-
-        return $this;
-    }
-
-    public function getOverviewTypeEn(): ?string
-    {
-        return $this->overviewTypeEn;
-    }
-
-    public function setOverviewTypeEn(?string $overviewTypeEn): self
-    {
-        $this->overviewTypeEn = $overviewTypeEn;
-
-        return $this;
-    }
-
-    public function getOverviewTypePl(): ?string
-    {
-        return $this->overviewTypePl;
-    }
-
-    public function setOverviewTypePl(?string $overviewTypePl): self
-    {
-        $this->overviewTypePl = $overviewTypePl;
-
-        return $this;
-    }
-
-    public function getOverviewTypeFr(): ?string
-    {
-        return $this->overviewTypeFr;
-    }
-
-    public function setOverviewTypeFr(?string $overviewTypeFr): self
-    {
-        $this->overviewTypeFr = $overviewTypeFr;
-
-        return $this;
-    }
-
     public function getPropertyTypeRu(): ?string
     {
         return $this->propertyTypeRu;
@@ -1017,54 +656,6 @@ class Post
     public function setPropertyTypeFr(?string $propertyTypeFr): self
     {
         $this->propertyTypeFr = $propertyTypeFr;
-
-        return $this;
-    }
-
-    public function getOverviewContractRu(): ?string
-    {
-        return $this->overviewContractRu;
-    }
-
-    public function setOverviewContractRu(?string $overviewContractRu): self
-    {
-        $this->overviewContractRu = $overviewContractRu;
-
-        return $this;
-    }
-
-    public function getOverviewContractEn(): ?string
-    {
-        return $this->overviewContractEn;
-    }
-
-    public function setOverviewContractEn(?string $overviewContractEn): self
-    {
-        $this->overviewContractEn = $overviewContractEn;
-
-        return $this;
-    }
-
-    public function getOverviewContractPl(): ?string
-    {
-        return $this->overviewContractPl;
-    }
-
-    public function setOverviewContractPl(?string $overviewContractPl): self
-    {
-        $this->overviewContractPl = $overviewContractPl;
-
-        return $this;
-    }
-
-    public function getOverviewContractFr(): ?string
-    {
-        return $this->overviewContractFr;
-    }
-
-    public function setOverviewContractFr(?string $overviewContractFr): self
-    {
-        $this->overviewContractFr = $overviewContractFr;
 
         return $this;
     }
@@ -1117,54 +708,6 @@ class Post
         return $this;
     }
 
-    public function getOverviewPriceRu(): ?string
-    {
-        return $this->overviewPriceRu;
-    }
-
-    public function setOverviewPriceRu(?string $overviewPriceRu): self
-    {
-        $this->overviewPriceRu = $overviewPriceRu;
-
-        return $this;
-    }
-
-    public function getOverviewPriceEn(): ?string
-    {
-        return $this->overviewPriceEn;
-    }
-
-    public function setOverviewPriceEn(?string $overviewPriceEn): self
-    {
-        $this->overviewPriceEn = $overviewPriceEn;
-
-        return $this;
-    }
-
-    public function getOverviewPricePl(): ?string
-    {
-        return $this->overviewPricePl;
-    }
-
-    public function setOverviewPricePl(?string $overviewPricePl): self
-    {
-        $this->overviewPricePl = $overviewPricePl;
-
-        return $this;
-    }
-
-    public function getOverviewPriceFr(): ?string
-    {
-        return $this->overviewPriceFr;
-    }
-
-    public function setOverviewPriceFr(?string $overviewPriceFr): self
-    {
-        $this->overviewPriceFr = $overviewPriceFr;
-
-        return $this;
-    }
-
     public function getPrice(): ?float
     {
         return $this->price;
@@ -1177,54 +720,6 @@ class Post
         return $this;
     }
 
-    public function getOverviewSquareRu(): ?string
-    {
-        return $this->overviewSquareRu;
-    }
-
-    public function setOverviewSquareRu(?string $overviewSquareRu): self
-    {
-        $this->overviewSquareRu = $overviewSquareRu;
-
-        return $this;
-    }
-
-    public function getOverviewSquareEn(): ?string
-    {
-        return $this->overviewSquareEn;
-    }
-
-    public function setOverviewSquareEn(?string $overviewSquareEn): self
-    {
-        $this->overviewSquareEn = $overviewSquareEn;
-
-        return $this;
-    }
-
-    public function getOverviewSquarePl(): ?string
-    {
-        return $this->overviewSquarePl;
-    }
-
-    public function setOverviewSquarePl(?string $overviewSquarePl): self
-    {
-        $this->overviewSquarePl = $overviewSquarePl;
-
-        return $this;
-    }
-
-    public function getOverviewSquareFr(): ?string
-    {
-        return $this->overviewSquareFr;
-    }
-
-    public function setOverviewSquareFr(?string $overviewSquareFr): self
-    {
-        $this->overviewSquareFr = $overviewSquareFr;
-
-        return $this;
-    }
-
     public function getSquare(): ?float
     {
         return $this->square;
@@ -1233,54 +728,6 @@ class Post
     public function setSquare(?float $square): self
     {
         $this->square = $square;
-
-        return $this;
-    }
-
-    public function getOverviewNameRu(): ?string
-    {
-        return $this->overviewNameRu;
-    }
-
-    public function setOverviewNameRu(?string $overviewNameRu): self
-    {
-        $this->overviewNameRu = $overviewNameRu;
-
-        return $this;
-    }
-
-    public function getOverviewNameEn(): ?string
-    {
-        return $this->overviewNameEn;
-    }
-
-    public function setOverviewNameEn(?string $overviewNameEn): self
-    {
-        $this->overviewNameEn = $overviewNameEn;
-
-        return $this;
-    }
-
-    public function getOverviewNamePl(): ?string
-    {
-        return $this->overviewNamePl;
-    }
-
-    public function setOverviewNamePl(?string $overviewNamePl): self
-    {
-        $this->overviewNamePl = $overviewNamePl;
-
-        return $this;
-    }
-
-    public function getOverviewNameFr(): ?string
-    {
-        return $this->overviewNameFr;
-    }
-
-    public function setOverviewNameFr(?string $overviewNameFr): self
-    {
-        $this->overviewNameFr = $overviewNameFr;
 
         return $this;
     }
@@ -1329,54 +776,6 @@ class Post
     public function setPropertyNameFr(?string $propertyNameFr): self
     {
         $this->propertyNameFr = $propertyNameFr;
-
-        return $this;
-    }
-
-    public function getOverviewPersonRu(): ?string
-    {
-        return $this->overviewPersonRu;
-    }
-
-    public function setOverviewPersonRu(?string $overviewPersonRu): self
-    {
-        $this->overviewPersonRu = $overviewPersonRu;
-
-        return $this;
-    }
-
-    public function getOverviewPersonEn(): ?string
-    {
-        return $this->overviewPersonEn;
-    }
-
-    public function setOverviewPersonEn(?string $overviewPersonEn): self
-    {
-        $this->overviewPersonEn = $overviewPersonEn;
-
-        return $this;
-    }
-
-    public function getOverviewPersonPl(): ?string
-    {
-        return $this->overviewPersonPl;
-    }
-
-    public function setOverviewPersonPl(?string $overviewPersonPl): self
-    {
-        $this->overviewPersonPl = $overviewPersonPl;
-
-        return $this;
-    }
-
-    public function getOverviewPersonFr(): ?string
-    {
-        return $this->overviewPersonFr;
-    }
-
-    public function setOverviewPersonFr(?string $overviewPersonFr): self
-    {
-        $this->overviewPersonFr = $overviewPersonFr;
 
         return $this;
     }

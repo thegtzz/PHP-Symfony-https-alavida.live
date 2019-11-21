@@ -8,6 +8,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 final class ContactInformationAdmin extends AbstractAdmin
@@ -22,7 +23,7 @@ final class ContactInformationAdmin extends AbstractAdmin
             ->add('facebook', TextType::class, ['required' => false])
             ->add('instagram', TextType::class, ['required' => false])
             ->add('linkedin', TextType::class, ['required' => false])
-            ->add('address', TextType::class);
+            ->add('address', TextareaType::class);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

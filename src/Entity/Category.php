@@ -13,6 +13,23 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
+
+    public const ISLAND_CATEGORY     = 'Island';
+    public const GROUND_CATEGORY     = 'Ground';
+    public const HOUSE_CATEGORY      = 'House';
+    public const APARTMENT_CATEGORY  = 'Apartment';
+    public const INVESTMENT_CATEGORY = 'Investment';
+
+    public const CATEGORIES =
+        [
+           self::ISLAND_CATEGORY,
+           self::GROUND_CATEGORY,
+           self::HOUSE_CATEGORY,
+           self::APARTMENT_CATEGORY,
+           self::INVESTMENT_CATEGORY,
+        ]
+    ;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
