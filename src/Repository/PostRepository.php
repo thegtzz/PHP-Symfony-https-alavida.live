@@ -44,7 +44,7 @@ class PostRepository extends ServiceEntityRepository
         if (isset($params["filter-price-to"]) && $toPrice = $params["filter-price-to"]) {
             $qb
                 ->andWhere('p.price <= :toPrice')
-                ->setParameter('fromPrice', $toPrice);
+                ->setParameter('toPrice', $toPrice);
         }
 
         return $qb->getQuery()->getResult();

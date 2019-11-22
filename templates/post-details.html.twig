@@ -88,10 +88,12 @@
                                 <i class="fa fa-retweet"></i>
                                 <span>{{ post.square }} m2</span>
                             </li>
-                            <li class="main-detail-_price">
-                                <i class="fa fa-cc-visa"></i>
-                                <span>{{ post.price }} $</span>
-                            </li>
+                            {% if post.price is not empty %}
+                                <li class="main-detail-_price">
+                                    <i class="fa fa-cc-visa"></i>
+                                    <span>{{ post.price }} $</span>
+                                </li>
+                            {% endif %}
                         </ul>
                         <div class="property-gallery">
                             <div id="slider-property" class="carousel slide" data-ride="carousel">
