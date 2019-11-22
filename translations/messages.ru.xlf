@@ -161,6 +161,10 @@
         <source>The following quotes are typical for the customer appreciation ALAVIDA receives</source>
         <target>Данные цитаты - это типичная оценка наших клиентов</target>
       </trans-unit>
+      <trans-unit id="0F7FcDK" resname="Location: %location%">
+        <source>Location: %location%</source>
+        <target>Локация: %location%</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

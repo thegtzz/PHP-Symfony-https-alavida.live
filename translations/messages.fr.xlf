@@ -66,7 +66,7 @@
         <target>Ce que nos clients disent</target>
       </trans-unit>
       <trans-unit id="wGDNkLT" resname="The following quotes are typical for the customer appreciation ___ receives">
-        <source>The following quotes are typical for the customer appreciation ALAVIDA receives</source>
+        <source>The following quotes are typical for the customer appreciation ___ receives</source>
         <target>Les citations suivantes sont typiques pour l'appréciation du client ALAVIDA reçoit</target>
       </trans-unit>
       <trans-unit id="_qFa15n" resname="Our Representatives">
@@ -160,6 +160,14 @@
       <trans-unit id="Ukm6TKO" resname="Similar properties">
         <source>Similar properties</source>
         <target>Propriétés similaires</target>
+      </trans-unit>
+      <trans-unit id="6NfLQ.o" resname="The following quotes are typical for the customer appreciation ALAVIDA receives">
+        <source>The following quotes are typical for the customer appreciation ALAVIDA receives</source>
+        <target>Les citations suivantes sont typiques pour l'appréciation du client ALAVIDA reçoit</target>
+      </trans-unit>
+      <trans-unit id="0F7FcDK" resname="Location: %location%">
+        <source>Location: %location%</source>
+        <target>L'emplacement: %location%</target>
       </trans-unit>
     </body>
   </file>

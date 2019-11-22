@@ -161,6 +161,14 @@
         <source>Similar properties</source>
         <target>Podobne oferty</target>
       </trans-unit>
+      <trans-unit id="6NfLQ.o" resname="The following quotes are typical for the customer appreciation ALAVIDA receives">
+        <source>The following quotes are typical for the customer appreciation ALAVIDA receives</source>
+        <target>Poniższe oferty są typowe dla uznania klienta ALAVIDA otrzymuje</target>
+      </trans-unit>
+      <trans-unit id="0F7FcDK" resname="Location: %location%">
+        <source>Location: %location%</source>
+        <target>Lokalizacja: %location%</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
