@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class PostImages
 {
-    const SERVER_PATH_TO_IMAGE_FOLDER = __DIR__.'\..\..\public\images';
+    const SERVER_PATH_TO_IMAGE_FOLDER = __DIR__.'/../../public/images';
 
     /**
      * @var int
